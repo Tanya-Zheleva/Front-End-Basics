@@ -1,3 +1,5 @@
+'use strict';
+
 function solve(args) {
     let width = Number(args[0]);
     let height = Number(args[1]);

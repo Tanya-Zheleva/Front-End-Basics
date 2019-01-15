@@ -1,3 +1,5 @@
+'use strict';
+
 function solve(args) {
     let number = Number(args[0]);
     let canDivide = number % 35 === 0;

@@ -1,3 +1,5 @@
+'use strict';
+
 function solve(args) {
     let digit = Math.floor(Number(args[0]) / 100) % 10;
 
