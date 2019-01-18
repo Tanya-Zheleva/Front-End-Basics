@@ -1,6 +1,6 @@
 'use strict';
 
-function findSubset(args, sum) {
+function findSum(args, sum) {
     let numbers = args.map(x => Number(x));
 
     for (let i = 0; i < numbers.length - 1; i++) {
@@ -13,13 +13,12 @@ function findSubset(args, sum) {
                 sumTokens.push(numbers[k]);
 
                 if (currentSum === sum) {
-                    return true;
+                    return sumTokens.join(', ');
                 }
             }
         }
     }
-
-    return false;
 }
 
-console.log(findSubset(['2', '1', '2', '4', '3', '5', '2', '6'], 14));
+let tokens = findSum(['4', '3', '1', '4', '2', '5', '8'], 11);
+console.log(tokens);
