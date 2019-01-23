@@ -1,6 +1,6 @@
 'use strict';
 
-function solve(size, array, index) {
+function solve(size, index, ...array) {
     let maxElement = getMaxElementInPortion(array, size, index);
 
     console.log(`Max element, starting from ${index}: ${maxElement} (before sorting)`);
@@ -38,4 +38,4 @@ function getMaxElementInPortion(array, size, index) {
     return max;
 }
 
-solve(10, [36, 10, 1, 34, 28, 38, 31, 27, 30, 20], 5);
+solve(10, 5, 36, 10, 1, 34, 28, 38, 31, 27, 30, 20);

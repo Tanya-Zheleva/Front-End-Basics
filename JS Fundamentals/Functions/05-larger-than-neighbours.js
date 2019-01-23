@@ -1,6 +1,6 @@
 'use strict';
 
-function solve(size, array) {
+function solve(size, ...array) {
     let largerFound = countLargerNeighbours(array, size);
 
     return largerFound;
@@ -18,4 +18,4 @@ function countLargerNeighbours(array, size) {
     return larger;
 }
 
-console.log(solve(6, [-26, -25, -28, 31, 2, 27,]));
+console.log(solve(6, -26, -25, -28, 31, 2, 27,));
