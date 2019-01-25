@@ -2,19 +2,20 @@
 <html>
 
 <head>
-    <!-- <script src="./smallest.js"></script> -->
 </head>
 
 <body>
     <script src="./smallest.js"></script>
     <a id="test" href="#">Click me</a>
     <script>
-     for (let key in document) {
-      console.log(document[key]);
-       
-     }
+        let windowKeys = Object.keys(window).sort((a, b) => a.localeCompare(b));
+        console.log(`Windows: smallest ${windowKeys[0]}, lagest: ${windowKeys[windowKeys.length - 1]}`);
 
-     console.log(document.getElementById('test'));
+        let documentKeys = Object.keys(document).sort((a, b) => a.localeCompare(b));
+        console.log(`Document: smallest ${documentKeys[0]}, lagest: ${documentKeys[documentKeys.length - 1]}`);
+
+        let navigatorKeys = Object.keys(navigator).sort((a, b) => a.localeCompare(b));
+        console.log(`Navigator: smallest ${navigatorKeys[0]}, lagest: ${navigatorKeys[navigatorKeys.length - 1]}`);
     </script>
 </body>
 
