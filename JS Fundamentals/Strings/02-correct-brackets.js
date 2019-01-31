@@ -8,14 +8,29 @@ function hasValidBrackets(args) {
         if (expression[i] === '(') {
             checker++;
         } else if (expression[i] === ')') {
+            if (checker <= 0) {
+                return false;
+            }
+
             checker--;
         }
     }
 
-    checker === 0 ?
-        console.log('Correct') :
-        console.log('Incorrect');
+    return checker === 0 ? true : false;
 }
 
-hasValidBrackets(['((a+b)/5-d)']);
-hasValidBrackets([')(a+b))']);
+hasValidBrackets(['((a+b)/5-d)']) ?
+    console.log('Correct') :
+    console.log('Incorrect');
+
+hasValidBrackets([')(a+b))']) ?
+    console.log('Correct') :
+    console.log('Incorrect');
+
+hasValidBrackets([")5(((44))"]) ?
+    console.log('Correct') :
+    console.log('Incorrect');
+
+hasValidBrackets([")5(((44)))"]) ?
+    console.log('Correct') :
+    console.log('Incorrect');
