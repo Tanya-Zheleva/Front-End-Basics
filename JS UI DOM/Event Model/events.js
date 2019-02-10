@@ -1,3 +1,5 @@
+'use strict';
+
 function solve() {
     return function (selector) {
         if (arguments.length === 0) {
@@ -15,7 +17,19 @@ function solve() {
             throw 'Invalid selector';
         }
 
-        console.log('ok');
+        let found = byId !== null ? byId : byElement;
+        let buttons = found.getElementsByClassName('button');
+        let contents = found.getElementsByClassName('content');
+
+
+        for (let i = 0; i < buttons.length; i++) {
+            buttons[i].innerHTML = 'hide';
+
+            buttons[i].addEventListener('click', function() {
+                console.log('clicked');
+            });        
+        }
+
     };
 };
 
