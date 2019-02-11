@@ -31,8 +31,12 @@
 
     <script src="./events.js"></script>
     <script>
-         let func = solve();
-         func('root');
+        try {
+            let func = solve();
+            func('root');
+        } catch (error) {
+            console.log(error);
+        }
     </script>
 </body>
 
