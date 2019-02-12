@@ -2,46 +2,47 @@
 
 function solve() {
     return function (selector) {
-        if (arguments.length === 0) {
+        if (!selector) {
             throw 'No selector is provided';
         }
 
-        if (typeof selector !== 'string') {
-            throw 'Selector type must be a string';
+        if (typeof selector !== 'string' && !(selector instanceof Element)) {
+            throw 'Selector type must be a string or a DOM element';
         }
 
-        let byId = document.getElementById(selector);
-        let byElement = document.getElementsByTagName(selector);
+        let found = null;
 
-        if (byId === null && byElement === undefined) {
-            throw 'Invalid selector';
+        if (selector instanceof Element) {
+            found = selector;
+        } else {
+            found = document.getElementById(selector);
         }
 
-        let found = byId !== null ? byId : byElement;
-        let buttons = found.getElementsByClassName('button');
+        if (!found) {
+            throw 'No such selector found';
+        }
 
-        for (let i = 0; i < buttons.length; i++) {
-            buttons[i].textContent = 'hide';
+        let items = found.querySelectorAll('.button, .content');
+        let length = items.length;
 
-            buttons[i].addEventListener('click', function () {
-                let child = found.childNodes[0];
+        for (let i = 0; i < length - 1; i++) {
+            if (items[i].className === 'button' && items[i + 1].className === 'content') {
+                items[i].textContent = 'hide';
 
-                while (child !== null) {
-                    if (child.className === 'content') {
-                        if (child.style.display !== 'none') {
-                            child.style.display = 'none';
+                if (i + 2 < length && items[i + 2].className === 'button') {
+                    items[i].addEventListener('click', function () {
+                        let content = items[i + 1];
+
+                        if (content.style.visibility !== 'hidden') {
+                            content.style.visibility = 'hidden';
                             this.textContent = 'show';
                         } else {
-                            child.style.display = 'block';
+                            content.style.visibility = 'show';
                             this.textContent = 'hide';
                         }
-
-                        break;
-                    }
-
-                    child = child.nextSibling;
+                    });
                 }
-            });
+            }
         }
     };
 };
