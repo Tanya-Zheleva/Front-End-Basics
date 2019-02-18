@@ -1,10 +1,21 @@
 <!DOCTYPE html>
 <html>
-    <body>
-        <div id="test"></div>
 
-        <script src="./generate.js">
-            createList('#test', 5);
-        </script>
-    </body>
+<head>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+</head>
+
+<body>
+    <div id="test"></div>
+
+    <script src="./generate.js"></script>
+    <script>
+        try {
+            createList('#test', '5');
+        } catch (error) {
+            console.log(error);
+        }
+    </script>
+</body>
+
 </html>

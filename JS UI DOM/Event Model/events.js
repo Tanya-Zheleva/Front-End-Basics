@@ -26,18 +26,18 @@ function solve() {
         let length = items.length;
 
         for (let i = 0; i < length - 1; i++) {
-            if (items[i].className === 'button' && items[i + 1].className === 'content') {
+            if (items[i].className === 'button') {
                 items[i].textContent = 'hide';
 
-                if (i + 2 < length && items[i + 2].className === 'button') {
+                if (i + 1 < length && items[i + 1].className === 'content') {
                     items[i].addEventListener('click', function () {
                         let content = items[i + 1];
 
-                        if (content.style.visibility !== 'hidden') {
-                            content.style.visibility = 'hidden';
+                        if (content.style.display !== 'none') {
+                            content.style.display = 'none';
                             this.textContent = 'show';
                         } else {
-                            content.style.visibility = 'show';
+                            content.style.display = 'block';
                             this.textContent = 'hide';
                         }
                     });

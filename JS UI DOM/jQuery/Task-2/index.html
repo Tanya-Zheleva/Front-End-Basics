@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Testing Task-1</title>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <a href="#" class="button"></a>
+        <a href="#" class="button"></a>
+        <br />
+        <div class="content">Content</div>
+        <a href="#" class="button"></a>
+        <br />
+        <div class="content">Content</div>
+        <a href="#" class="button"></a>
+        <br />
+        <div class="content">Content</div>
+        <a href="#" class="button"></a>
+        <a href="#" class="button"></a>
+        <br />
+        <div class="content">Content</div>
+        <a href="#" class="button"></a>
+        <a href="#" class="button"></a>
+        <a href="#" class="button"></a>
+        <br />
+        <div class="content">Content</div>
+    </div>
+
+    <script src="./events.js"></script>
+    <script>
+        try {
+            //solve('#root');
+            let root = $('#root');
+            solve(root);
+        } catch (error) {
+            console.log(error);
+        }
+    </script>
+</body>
+
+</html>
