@@ -33,17 +33,17 @@ function solve(selector) {
         if (current.hasClass('button')) {
             current.text('hide');
 
-            if (index + 1 < length && $(items[index + 1]).hasClass('content')) {
+            if (index + 2 < length && $(items[index + 1]).hasClass('content')) {
                 current.on('click', function () {
                     let content = $(items[index + 1]);
 
-                    if (content.css('display') !== 'none') {
+                    if (content.css('visibility') !== 'hidden') {
                         current.text('show');
+                        content.css('visibility', 'hidden');
                     } else {
                         current.text('hide');
+                        content.css('visibility', 'visible');
                     }
-
-                    content.toggle();
                 });
             }
         }
