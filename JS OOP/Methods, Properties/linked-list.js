@@ -11,55 +11,103 @@ class LinkedList {
 
     *[Symbol.iterator]() {
         let current = this._first;
+
         while (current) {
             yield current.data;
             current = current.next;
         }
     }
 
-
     append(...data) {
-        let index = 0;
-
-        if (this._first === null) {
-            this._first = new ListNode(data[0]);
-            this._last = this._first;
-
-            this._length++;
-            index = 1;
-        }
-
-        for (let i = index; i < data.length; i++) {
-            let node = new ListNode(data[i]);
-            this._last.next = node;
-            this._last = this._last.next;
-
-            this._length++;
+        for (let i = 0; i < data.length; i++) {
+            this.insert(this._length, data[i]);
         }
 
         return this;
     }
 
     prepend(...data) {
-        let index = 0;
+        // for (let i = 0; i < data.length; i++) {
+        //     this.insert(0, data[i]);
+        // }
 
-        if (this._first === null) {
+        for (let i = data.length - 1; i >= 0; i--) {
+            this.insert(0, data[i]);
+        }
+
+        return this;
+    }
+
+    at(index, data = null) {
+        let counter = 0;
+        let current = this._first;
+
+        while (current) {
+            if (counter === index) {
+                if (!data) {
+                    return current;
+                }
+
+                current.data = data;
+            }
+
+            counter++;
+            current = current.next;
+        }
+    }
+
+    insert(index, ...data) {
+        let start = 0;
+
+        if (!this._first) {
             this._first = new ListNode(data[0]);
             this._last = this._first;
 
             this._length++;
-            index = 1;
+            start = 1;
         }
 
-        for (let i = index; i < data.length; i++) {
-            let node = new ListNode(data[i]);
-            node.next = this._first;
-            this._first = node;
+        if (index === 0) {
+            //for (let i = start; i < data.length; i++) {
+                for (let i = data.length - 1; i >= start; i--) {
+                let node = new ListNode(data[i]);
 
+                node.next = this._first;
+                this._first = node;
+                this._length++;
+            }
+
+            return this;
+        }
+
+        //for (let i = start; i < data.length; i++) {
+            for (let i = data.length - 1; i >= start; i--) {
+            let previous = this.at(index - 1);
+            let node = new ListNode(data[i]);
+
+            node.next = previous.next;
+            previous.next = node;
             this._length++;
         }
 
         return this;
+    }
+
+    removeAt(index) {
+        if (index === 0) {
+            let node = this._first;
+            this._first = this._first.next;
+            this._length--;
+
+            return node;
+        }
+
+        let node = this.at(index);
+        let previous = this.at(index - 1);
+        previous.next = node.next;
+        this._length--;
+
+        return node;
     }
 
     toArray() {
@@ -67,7 +115,7 @@ class LinkedList {
     }
 
     toString() {
-        return [...this].join(' -> ');
+        return this.toArray().join(' -> ');
     }
 }
 
