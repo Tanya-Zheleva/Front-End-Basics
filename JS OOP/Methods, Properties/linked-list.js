@@ -27,10 +27,6 @@ class LinkedList {
     }
 
     prepend(...data) {
-        // for (let i = 0; i < data.length; i++) {
-        //     this.insert(0, data[i]);
-        // }
-
         for (let i = data.length - 1; i >= 0; i--) {
             this.insert(0, data[i]);
         }
@@ -68,7 +64,6 @@ class LinkedList {
         }
 
         if (index === 0) {
-            //for (let i = start; i < data.length; i++) {
                 for (let i = data.length - 1; i >= start; i--) {
                 let node = new ListNode(data[i]);
 
@@ -80,7 +75,6 @@ class LinkedList {
             return this;
         }
 
-        //for (let i = start; i < data.length; i++) {
             for (let i = data.length - 1; i >= start; i--) {
             let previous = this.at(index - 1);
             let node = new ListNode(data[i]);
