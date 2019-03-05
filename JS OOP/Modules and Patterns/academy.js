@@ -75,18 +75,21 @@ function solve() {
             }
         },
         getTopStudents: function () {
+            const studentsToBeListed = 10;
+            const examPercent = 0.75;
+
             let homeworks = course.presentations.length;
-            let studentsToShow = course.students.length <= 10
+            let studentsToShow = course.students.length <= studentsToBeListed
                 ? course.students.length :
-                10;
+                studentsToBeListed;
 
             let sorted = course.students.sort((a, b) => {
-                let firstScore = Math.floor((a.score * 0.75) + (a.submittedHomeworks / homeworks));
-                let secondScore = Math.floor((b.score * 0.75) + (b.submittedHomeworks / homeworks));
+                let firstScore = Math.floor((a.score * examPercent) + (a.submittedHomeworks / homeworks));
+                let secondScore = Math.floor((b.score * examPercent) + (b.submittedHomeworks / homeworks));
 
                 return secondScore - firstScore;
             })
-                .map(x => `${x.firstName} ${x.lastName}, exam score: ${Math.floor((x.score * 0.75) + (x.submittedHomeworks / homeworks))}`)
+                .map(x => `${x.firstName} ${x.lastName}, exam score: ${Math.floor((x.score * examPercent) + (x.submittedHomeworks / homeworks))}`)
                 .slice(0, studentsToShow);
 
             return sorted;

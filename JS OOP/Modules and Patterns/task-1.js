@@ -15,7 +15,7 @@ try {
     academy.init('test', presentations);
     //academy.test();
 
-    let students = ['Petar Petrov', 'Ivan Ivanov', 'Mihaela Ivanova', 'Ina Georgieva'];
+    let students = ['Petar Mihailov', 'I5n Kostadinov', 'Mihaela Ivanova', 'Ina Georgieva'];
 
     students.forEach(x => academy.addStudent(x));
     academy.getAllStudents();

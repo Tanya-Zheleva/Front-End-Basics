@@ -2,8 +2,8 @@
 
 class Student {
     constructor(firstName, lastName) {
-        this._firstName = firstName;
-        this._lastName = lastName;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this._id = this._firstName.length % 9;
         this._submittedHomeworks = 0;
         this._score = 0;

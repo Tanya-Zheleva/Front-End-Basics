@@ -1,6 +1,8 @@
+'use strict';
+
 class Presentation {
     constructor(title, homework) {
-        this._title = title;
+        this.title = title;
         this._homework = homework;
     }
 

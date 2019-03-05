@@ -2,7 +2,7 @@
 
 class Course {
     constructor(title) {
-        this._title = title;
+        this.title = title;
         this._presentations = new Array();
         this._students = new Array();
     }
