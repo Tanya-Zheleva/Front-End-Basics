@@ -9,8 +9,10 @@ function solve() {
     let course;
 
     let Academy = {
-        init: function (title, presentations) { //an array of objects title + hw
-            if (arguments.length < 2) {
+        init: function (title, presentations) {
+            const minArgsLength = 2;
+
+            if (arguments.length < minArgsLength) {
                 throw 'Invalid course arguments';
             }
 
@@ -83,14 +85,15 @@ function solve() {
                 ? course.students.length :
                 studentsToBeListed;
 
-            let sorted = course.students.sort((a, b) => {
+            let sorted = course.students
+            .sort((a, b) => {
                 let firstScore = Math.floor((a.score * examPercent) + (a.submittedHomeworks / homeworks));
                 let secondScore = Math.floor((b.score * examPercent) + (b.submittedHomeworks / homeworks));
 
                 return secondScore - firstScore;
             })
-                .map(x => `${x.firstName} ${x.lastName}, exam score: ${Math.floor((x.score * examPercent) + (x.submittedHomeworks / homeworks))}`)
-                .slice(0, studentsToShow);
+            .map(x => `${x.firstName} ${x.lastName}, exam score: ${Math.floor((x.score * examPercent) + (x.submittedHomeworks / homeworks))}`)
+            .slice(0, studentsToShow);
 
             return sorted;
         },
