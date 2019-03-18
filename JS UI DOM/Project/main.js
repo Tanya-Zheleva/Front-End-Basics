@@ -61,8 +61,12 @@ function start() {
         let ballX = ball.cx();
         let ballY = ball.cy();
 
-        if (velY > 0 && ballY >= paddleYEnd && ballX >= paddle.x() && ballX <= paddleXEnd) {
+        if (velY > 0 && ballY >= paddleYEnd && ballX >= paddle.x() && ballX <= paddleXEnd) { //?
             velY = -velY;
+        }
+
+        if (velX > 0 && ballX >= paddle.x() && ballX <= paddleXEnd && ballY <= paddle.y() && ballY >= paddleYEnd) { //?
+            velX = -velX;
         }
 
         // if (velY < 0 && ballY >= paddleYEnd && ballX >= paddle.x() && ballX <= paddleXEnd) {
@@ -73,6 +77,11 @@ function start() {
         //     velY = -velY;
         // }
 
+        // if (velY > 0 && ballY >= height) {
+        //     pauseGame();
+        // }
+
+        //............
         if ((velY < 0 && ballY < 0) || (velY > 0 && ballY >= height)) {
             velY = -velY;
         }
@@ -105,6 +114,21 @@ function start() {
     }
 
     callback();
+
+    function pauseGame() {
+        velY = 0;
+        velX = 0;
+
+        ball.animate(100).center(width / 2, height / 2 - 100);
+        paddle.animate(50).cx(width / 2);
+    }
+
+    draw.on('click', function () {
+        if (velX === 0 && velY === 0) {
+            velX = testVel;
+            velY = testVel;
+        }
+    });
 }
 
 start();
