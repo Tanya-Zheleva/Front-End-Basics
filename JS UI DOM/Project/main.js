@@ -8,10 +8,10 @@ const paddleHeight = 12;
 const paddleXOffset = width / 2 - paddleWidth / 2;
 const paddleYOffset = height - 30;
 
-const floatingPaddleWidth = 220;
-const floatingPaddleHeight = 15;
+const floatingWidth = 220;
+const floatingHeight = 15;
 const floatingOffsetX = 150;
-const floatingOffsetY = 200;
+const floatingOffsetY = 250;
 
 const verticalPadWidth = 15;
 const verticalPadHeight = 150;
@@ -54,12 +54,15 @@ function start() {
         .move(width - scoreWidthOffset, scoreHeightOffset);
 
     let paddle = createPaddle(draw, paddleWidth, paddleHeight, paddleXOffset, paddleYOffset, 'blue');
-    let floatingPaddle = createPaddle(draw, floatingPaddleWidth, floatingPaddleHeight, floatingOffsetX, floatingOffsetY, 'green');
+    let floatingPaddle = createPaddle(draw, floatingWidth, floatingHeight, floatingOffsetX, floatingOffsetY, 'green');
     let leftVerticalPad = createPaddle(draw, verticalPadWidth, verticalPadHeight, verticalPadXOffset, verticalPadYOffset, 'orange');
     let rightVerticalPad = createPaddle(draw, verticalPadWidth, verticalPadHeight, width - verticalPadXOffset - verticalPadWidth, verticalPadYOffset, 'orange');
 
+    let triangle = draw.polygon('200,0 500,0, 300,100').fill('yellow');
+    let triangle2 = draw.polygon('800,0 500,0, 700,100').fill('yellow');
+
     floatingPaddle.animate(3000)
-        .move(600, 200)
+        .move(600, 250)
         .loop(true, true);
 
     leftVerticalPad.animate(3000)
@@ -94,7 +97,7 @@ function start() {
         let ballX = ball.cx();
         let ballY = ball.cy();
 
-        let hitsHorizontal = hitsPaddle(ballX, ballY, floatingPaddle.y(), floatingPaddle.y() + floatingPaddleHeight, floatingPaddle.x(), floatingPaddle.x() + floatingPaddleWidth);
+        let hitsHorizontal = hitsPaddle(ballX, ballY, floatingPaddle.y(), floatingPaddle.y() + floatingHeight, floatingPaddle.x(), floatingPaddle.x() + floatingWidth);
         
         if (hitsHorizontal) {
             velY = -velY;
@@ -156,6 +159,7 @@ function start() {
     function pauseGame() {
         velY = 0;
         velX = 0;
+        points = 0;
 
         ball.animate(100).center(width / 2, height / 2 - 170);
         paddle.animate(50).cx(width / 2);
