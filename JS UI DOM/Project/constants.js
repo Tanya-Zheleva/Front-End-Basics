@@ -11,4 +11,8 @@ class Utils {
 }
 
 // module.exports = utilities;
-module.exports = utilities;
+//module.exports = utilities;
+
+export function test() {
+    console.log(7);
+}
