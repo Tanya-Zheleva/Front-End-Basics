@@ -3,10 +3,10 @@
 const width = 1000;
 const height = 600;
 
-const paddleWidth = 200;
-const paddleHeight = 12;
-const paddleXOffset = width / 2 - paddleWidth / 2;
-const paddleYOffset = height - 30;
+const padWidth = 200;
+const padHeight = 12;
+const padXOffset = width / 2 - padWidth / 2;
+const padYOffset = height - 30;
 
 const floatingWidth = 150;
 const floatingHeight = 12;
@@ -44,7 +44,7 @@ const scoreFont = {
     fill: 'white'
 };
 
-function createPaddle(drawer, padWidth, padHeight, x, y, color) {
+function createPad(drawer, padWidth, padHeight, x, y, color) {
     return {
         rect: drawer.rect(padWidth, padHeight).x(x).y(y).fill(color),
         width: padWidth,
@@ -61,11 +61,11 @@ function createBall(drawer, x, y, diameter, velX, velY, color) {
     };
 }
 
-function animatePaddle(pad, dx, dy, animationType, duration) {
+function animatePad(pad, dx, dy, animationType, duration) {
     pad.rect.animate(duration, animationType).move(dx, dy).loop(true, true);
 }
 
-function hitsPaddle(ball, pad) {
+function hitsPad(ball, pad) {
     let yStart = pad.rect.y();
     let yEnd = pad.rect.y() + pad.height;
     let xStart = pad.rect.x();
@@ -74,15 +74,15 @@ function hitsPaddle(ball, pad) {
     return (ball.circle.cy() >= yStart && ball.circle.cy() <= yEnd) && (ball.circle.cx() >= xStart && ball.circle.cx() <= xEnd);
 }
 
-function movePaddle(pad, direction, speed) {
+function movePad(pad, direction, speed) {
     let x = pad.rect.x();
 
-    if (x <= 0 && direction == -1) {
+    if (x <= 0 && direction === -1) {
         pad.rect.cx(pad.width / 2);
-    } else if (x >= width - pad.width && direction == 1) {
+    } else if (x >= width - pad.width && direction === 1) {
         pad.rect.x(width - pad.width);
     } else {
-        pad.rect.dx(direction * speed)
+        pad.rect.dx(direction * speed);
     }
 }
 
@@ -94,23 +94,23 @@ function createScore(drawer, type, offsetX, offsetY) {
 }
 
 function checkCollisions(ball, paddles, score) {
-    if (hitsPaddle(ball, paddles.leftWall) || hitsPaddle(ball, paddles.rigthWall)) {
+    if (hitsPad(ball, paddles.leftWall) || hitsPad(ball, paddles.rigthWall)) {
         ball.velY = -ball.velY;
     }
 
-    if (hitsPaddle(ball, paddles.leftTopWall) || hitsPaddle(ball, paddles.rightTopWall)) {
+    if (hitsPad(ball, paddles.leftTopWall) || hitsPad(ball, paddles.rightTopWall)) {
         ball.velX = -ball.velX;
     }
 
-    if (hitsPaddle(ball, paddles.floatingPaddle)) {
+    if (hitsPad(ball, paddles.floatingPaddle)) {
         ball.velY = -ball.velY;
     }
 
-    if (hitsPaddle(ball, paddles.leftVerticalPad) || hitsPaddle(ball, paddles.rightVerticalPad)) {
+    if (hitsPad(ball, paddles.leftVerticalPad) || hitsPad(ball, paddles.rightVerticalPad)) {
         ball.velX = -ball.velX;
     }
 
-    if (hitsPaddle(ball, paddles.paddle)) {
+    if (hitsPad(ball, paddles.paddle)) {
         score.points++;
         ball.velY = -ball.velY;
     }
@@ -124,19 +124,19 @@ function start() {
     let score = createScore(draw, 'Current', scoreXOffset, scoreYOffset);
     let topScore = createScore(draw, 'Top', topScoreXOffset, scoreYOffset);
 
-    let paddle = createPaddle(draw, paddleWidth, paddleHeight, paddleXOffset, paddleYOffset, 'blue');
-    let floatingPaddle = createPaddle(draw, floatingWidth, floatingHeight, floatingOffsetX, floatingOffsetY, 'green');
-    let leftVerticalPad = createPaddle(draw, verticalPadWidth, verticalPadHeight, verticalPadXOffset, verticalPadYOffset, 'orange');
-    let rightVerticalPad = createPaddle(draw, verticalPadWidth, verticalPadHeight, width - verticalPadXOffset - verticalPadWidth, verticalPadYOffset, 'orange');
+    let pad = createPad(draw, padWidth, padHeight, padXOffset, padYOffset, 'blue');
+    let floatingPad = createPad(draw, floatingWidth, floatingHeight, floatingOffsetX, floatingOffsetY, 'green');
+    let leftVerticalPad = createPad(draw, verticalPadWidth, verticalPadHeight, verticalPadXOffset, verticalPadYOffset, 'orange');
+    let rightVerticalPad = createPad(draw, verticalPadWidth, verticalPadHeight, width - verticalPadXOffset - verticalPadWidth, verticalPadYOffset, 'orange');
 
-    let leftWall = createPaddle(draw, wallWidth, wallHeight, wallXOffset, wallYOffset, 'purple');
-    let rigthWall = createPaddle(draw, wallWidth, wallHeight, width - wallWidth, wallYOffset, 'purple');
-    let leftTopWall = createPaddle(draw, wallTopWidth, wallTopHeight, wallTopXOffset, wallTopYOffset, 'purple');
-    let rightTopWall = createPaddle(draw, wallTopWidth, wallTopHeight, width - wallTopWidth - wallTopXOffset, wallTopYOffset, 'purple');
+    let leftWall = createPad(draw, wallWidth, wallHeight, wallXOffset, wallYOffset, 'purple');
+    let rigthWall = createPad(draw, wallWidth, wallHeight, width - wallWidth, wallYOffset, 'purple');
+    let leftTopWall = createPad(draw, wallTopWidth, wallTopHeight, wallTopXOffset, wallTopYOffset, 'purple');
+    let rightTopWall = createPad(draw, wallTopWidth, wallTopHeight, width - wallTopWidth - wallTopXOffset, wallTopYOffset, 'purple');
 
-    animatePaddle(floatingPaddle, 600, 130, '<>', 2000);
-    animatePaddle(leftVerticalPad, 70, 200, '<', 1500);
-    animatePaddle(rightVerticalPad, 910, 200, '>', 1500);
+    animatePad(floatingPad, 600, 130, '<>', 2000);
+    animatePad(leftVerticalPad, 70, 200, '<', 1500);
+    animatePad(rightVerticalPad, 910, 200, '>', 1500);
 
     let ball = createBall(draw, width / 2, height / 2, ballRadius, testVel, testVel, 'red');
     let direction = 0; //1 right, -1 left
@@ -152,18 +152,18 @@ function start() {
 
     function update(time) {
         ball.circle.dmove(ball.velX * time, ball.velY * time);
-        let allPaddles = {
+        let allPads = {
             leftWall: leftWall,
             rigthWall: rigthWall,
             leftTopWall: leftTopWall,
             rightTopWall: rightTopWall,
             leftVerticalPad: leftVerticalPad,
             rightVerticalPad: rightVerticalPad,
-            floatingPaddle: floatingPaddle,
-            paddle: paddle
+            floatingPaddle: floatingPad,
+            paddle: pad
         };
 
-        checkCollisions(ball, allPaddles, score);
+        checkCollisions(ball, allPads, score);
         
         if (ball.velY > 0 && ball.circle.cy() >= height) {
             pauseGame();
@@ -177,7 +177,7 @@ function start() {
             ball.velX = -ball.velX;
         }
 
-        movePaddle(paddle, direction, speed);
+        movePad(pad, direction, speed);
         score.text.text(`Current Score: ${score.points}`);
         topScore.text.text(`Top Score: ${topScore.points}`);
     }
@@ -207,7 +207,7 @@ function start() {
         score.points = 0;
 
         ball.circle.animate(120).center(width / 2, height / 2 - 260);
-        paddle.rect.animate(50).cx(width / 2);
+        pad.rect.animate(50).cx(width / 2);
     }
 
     draw.on('click', function () {
