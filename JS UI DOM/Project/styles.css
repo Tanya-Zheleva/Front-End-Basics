@@ -1,14 +1,4 @@
-canvas {
-    /* width: 600px;
-    height: 500px; */
-    border: 1px solid black;
-}
-
-
-/* svg {
-    width: 700px;
-    height: 600px;
-
-    border: 1px solid black;
+/* svg > text:last-of-type {
+    color: 'green';
+    font-size: 2.5em;
 } */
-
