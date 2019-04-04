@@ -102,39 +102,68 @@ function createScore(drawer, type, offsetX, offsetY) {
     };
 }
 
-function checkCollisions(ball, paddles, score) {
-    if (hitsPad(ball, paddles.leftWall) || hitsPad(ball, paddles.rigthWall)) {
+function checkCollisions(ball, objects, score) {
+    if (hitsPad(ball, objects.leftWall) || hitsPad(ball, objects.rigthWall)) {
         ball.velY = -ball.velY;
     }
 
-    if (hitsPad(ball, paddles.leftTopWall) || hitsPad(ball, paddles.rightTopWall)) {
+    if (hitsPad(ball, objects.leftTopWall) || hitsPad(ball, objects.rightTopWall)) {
         ball.velX = -ball.velX;
     }
 
-    if (hitsPad(ball, paddles.floatingPaddle)) {
+    if (hitsPad(ball, objects.floatingPaddle)) {
         ball.velY = -ball.velY;
     }
 
-    if (hitsPad(ball, paddles.leftVerticalPad) || hitsPad(ball, paddles.rightVerticalPad)) {
+    if (hitsPad(ball, objects.leftVerticalPad) || hitsPad(ball, objects.rightVerticalPad)) {
         ball.velX = -ball.velX;
     }
 
-    if (hitsPad(ball, paddles.paddle)) {
+    if (hitsPad(ball, objects.paddle)) {
         score.points++;
         ball.velY = -ball.velY;
+    }
+
+    if (hitsBall(ball, objects.bonusBall1)) {
+        score.points++;
+        ball.velY = -ball.velY;
+    }
+
+    if (hitsBall(ball, objects.bonusBall2)) {
+        score.points++;
+        ball.velY = - ball.velY;
+    }
+
+    if (hitsBall(ball, objects.bonusBall3)) {
+        score.points++;
+        ball.velY = - ball.velY;
     }
 }
 
 function hitsBall(ball, targetBall) {
-        let xPow = Math.pow(targetBall.circle.cx() - ball.circle.cx(), 2);
-        let yPow = Math.pow(targetBall.circle.cy() - ball.circle.cy(), 2);
-        let dist = xPow + yPow;
-        let radSum = ball.diameter / 2 + targetBall.diameter / 2;
+         let xPow = Math.pow(targetBall.circle.cx() - ball.circle.cx(), 2);
+         let yPow = Math.pow(targetBall.circle.cy() - ball.circle.cy(), 2);
+         let dist = xPow + yPow;
+         let radSum = Math.pow(ball.diameter / 2 + targetBall.diameter / 2, 2);
+         let radDiff =  Math.pow(ball.diameter / 2 - targetBall.diameter / 2, 2);
 
-        console.log(`${ball.diameter} ${targetBall.diameter}`);
-    console.log(`${dist} ${radSum}`);
+         return radDiff <= dist && dist <= radSum;
+}
 
-        return Math.pow(radSum, 2) <= dist;
+function checkSideCollisions(ball, pauseGame) {
+    if (ball.velY > 0 && ball.circle.cy() >= height) {
+        if (ball.circle.fill() === 'red') {
+            pauseGame();
+        }
+    }
+
+    if ((ball.velY < 0 && ball.circle.cy() < 0) || (ball.velY > 0 && ball.circle.cy() >= height)) {
+        ball.velY = -ball.velY;
+    }
+
+    if ((ball.velX < 0 && ball.circle.cx() <= 0) || (ball.velX > 0 && ball.circle.cx() >= width)) {
+        ball.velX = -ball.velX;
+    }
 }
 
 function start() {
@@ -160,22 +189,10 @@ function start() {
     animatePad(rightVerticalPad, 910, 200, '>', 1500);
 
     let ball = createBall(draw, width / 2, height / 2, ballDiameter, testVel, testVel, 'red');
-
-    let bonusBall1 = createBall(draw, width / 2 - 28, height / 2 - 50, 26, 300, 300, 'green');
-    let bonusBall2 = createBall(draw, width / 2, height / 2 - 50, 26, 300, 300, 'green');
-    let bonusBall3 = createBall(draw, width / 2 + 28, height / 2 - 50, 26, 300, 300, 'green');
-
-    if (hitsBall(ball, bonusBall1)) {
-        ball.velY = -ball.velY;
-    }
-
-    if (hitsBall(ball, bonusBall2)) {
-        ball.velY = - ball.velY;
-    }
-
-    if (hitsBall(ball, bonusBall3)) {
-        ball.velY = - ball.velY;
-    }
+    let bonusBalls = new Array();
+    bonusBalls.push(createBall(draw, width / 2 - 28, height / 2 - 50, 26, 300, 300, 'green'));
+    bonusBalls.push(createBall(draw, width / 2, height / 2 - 50, 26, 350, 350, 'green'));
+    bonusBalls.push(createBall(draw, width / 2 + 28, height / 2 - 50, 26, 400, 400, 'green'));
 
     let direction = 0; //1 right, -1 left
     let speed = 5;
@@ -190,7 +207,11 @@ function start() {
 
     function update(time) {
         ball.circle.dmove(ball.velX * time, ball.velY * time);
-        let allPads = {
+        bonusBalls[0].circle.dmove(bonusBalls[0].velX * time, bonusBalls[0].velY * time);
+        bonusBalls[1].circle.dmove(bonusBalls[1].velX * time, bonusBalls[1].velY * time);
+        bonusBalls[2].circle.dmove(bonusBalls[2].velX * time, bonusBalls[2].velY * time);
+
+        let allObjects = {
             leftWall: leftWall,
             rigthWall: rigthWall,
             leftTopWall: leftTopWall,
@@ -198,22 +219,18 @@ function start() {
             leftVerticalPad: leftVerticalPad,
             rightVerticalPad: rightVerticalPad,
             floatingPaddle: floatingPad,
-            paddle: pad
+            paddle: pad,
+            bonusBall1: bonusBalls[0],
+            bonusBall2: bonusBalls[1],
+            bonusBall3: bonusBalls[2]
         };
 
-        checkCollisions(ball, allPads, score);
+        checkCollisions(ball, allObjects, score);     
 
-        if (ball.velY > 0 && ball.circle.cy() >= height) {
-            pauseGame();
-        }
-
-        if ((ball.velY < 0 && ball.circle.cy() < 0) || (ball.velY > 0 && ball.circle.cy() >= height)) {
-            ball.velY = -ball.velY;
-        }
-
-        if ((ball.velX < 0 && ball.circle.cx() <= 0) || (ball.velX > 0 && ball.circle.cx() >= width)) {
-            ball.velX = -ball.velX;
-        }
+        checkSideCollisions(ball, pauseGame);
+        checkSideCollisions(bonusBalls[0], pauseGame);
+        checkSideCollisions(bonusBalls[1], pauseGame);
+        checkSideCollisions(bonusBalls[2], pauseGame);
 
         movePad(pad, direction, speed);
         score.text.text(`Current Score: ${score.points}`);
