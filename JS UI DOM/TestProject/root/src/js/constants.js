@@ -1,9 +1,3 @@
-const width = 1000;
-const height = 600;
-const padWidth = 200;
-const padXOffset = width / 2 - padWidth / 2;
-const padYOffset = height - 30;
-
 const scoreFont = {
     size: 35,
     family: 'New Times Roman',
@@ -17,16 +11,22 @@ const gameOverFont = {
 };
 
 let constants = {
+    backgroundColor: '#b7bdc9',
+    orange: 'orange',
+    blue: 'blue',
+    green: 'green',
+    yellow: 'yellow',
+    red: 'red',
     width: 1000,
     height: 600,
-    padWidth: 200,
+    padWidth: 160,
     padHeight: 12,
-    padXOffset: padXOffset,
-    padYOffset: padYOffset,
-    floatingWidth: 150,
-    floatingHeight: 12,
-    floatingOffsetX: 200,
-    floatingOffsetY: 130,
+    padXOffset: 420,
+    padYOffset: 570,
+    horizontalWidth: 150,
+    horizontalHeight: 12,
+    horizontalOffsetX: 200,
+    horizontalOffsetY: 130,
     verticalPadWidth: 15,
     verticalPadHeight: 150,
     verticalPadXOffset: 70,
@@ -43,7 +43,7 @@ let constants = {
     scoreYOffset: 10,
     topScoreXOffset: 980,
     ballDiameter: 22,
-    testVel: 300,
+    testVel: 350,
     rightArrowCode: 39,
     leftArrowCode: 37,
     gameOverX: 380,
