@@ -9,11 +9,11 @@ export class Presentation {
         this._homework = homework;
     }
 
-    get title(): string {
+    public get title(): string {
         return this._title;
     }
 
-    set title(value: string) {
+    public set title(value: string) {
         if (!/^(\w\s?){1,}$/g.test(value)) {
             throw 'Invlid presentation title';
         }
@@ -21,7 +21,7 @@ export class Presentation {
         this._title = value;
     }
 
-    get homework(): Homework {
+    public get homework(): Homework {
         return this._homework;
     }
 }

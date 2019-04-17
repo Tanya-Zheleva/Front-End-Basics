@@ -5,15 +5,15 @@ export class Homework {
         this.content = content;
     }
 
-    get content(): string {
+    public get content(): string {
         return this._content;
     }
 
-    set content(value: string) {
+    public set content(value: string) {
         this._content = value;
     }
 
-    get id(): number {
+    public get id(): number {
         return this._content.length % 7;
     }
 }

@@ -13,11 +13,11 @@ export class Student {
         this._score = 0;
     }
 
-    get firstName(): string {
+    public get firstName(): string {
         return this._firstName;
     }
 
-    set firstName(value: string) {
+    public set firstName(value: string) {
         if (!/^[A-Z][a-z]*$/g.test(value)) {
             throw 'Invalid student first name';
         }
@@ -25,11 +25,11 @@ export class Student {
         this._firstName = value;
     }
 
-    get lastName(): string {
+    public get lastName(): string {
         return this._lastName;
     }
 
-    set lastName(value: string) {
+    public set lastName(value: string) {
         if (!/^[A-Z][a-z]*$/g.test(value)) {
             throw 'Invalid studnet last name';
         }
@@ -37,27 +37,27 @@ export class Student {
         this._lastName = value;
     }
 
-    get id(): number {
+    public get id(): number {
         return this._id;
     }
 
-    get submittedHomeworks(): number {
+    public get submittedHomeworks(): number {
         return this._submittedHomeworks;
     }
 
-    get score(): number {
+    public get score(): number {
         return this._score;
     }
 
-    addScore(score: number): void {
+    public addScore(score: number): void {
         this._score += score;
     }
 
-    submitHomework(): void {
+    public submitHomework(): void {
         this._submittedHomeworks++;
     }
 
-    toString(): string {
+    public toString(): string {
         return `{firstName: ${this.firstName}, lastName: ${this.lastName}, id: ${this.id}},  hws: ${this.submittedHomeworks}, score: ${this.score}`;
     }
 }

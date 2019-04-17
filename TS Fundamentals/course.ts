@@ -11,11 +11,11 @@ export class Course {
         this._students = new Array();
     }
 
-    get title(): string {
+    public get title(): string {
         return this._title;
     }
 
-    set title(value: string) {
+    public set title(value: string) {
         if (!/^(\w\s?){1,}$/g.test(value)) {
             throw 'Invlid course title';
         }
@@ -23,20 +23,20 @@ export class Course {
         this._title = value;
     }
 
-    get presentations(): Presentation[] {
+    public get presentations(): Presentation[] {
         return this._presentations;
     }
 
-    get students(): Student[] {
+    public get students(): Student[] {
         return this._students;
     }
 
-    init(title: string, presentations: Presentation[]): void { //or with titles?
+    public init(title: string, presentations: Presentation[]): void { 
         this.title = title;
         this._presentations = presentations;
     }
 
-    addStudent(fullName: string): number {
+    public addStudent(fullName: string): number {
         let [firstName, lastName] = fullName.split(/\s+/g);
         let student: Student = new Student(firstName, lastName);
         this._students.push(student);
@@ -44,11 +44,11 @@ export class Course {
         return student.id;
     }
 
-    getAllStudents(): string[] {
+    public getAllStudents(): string[] {
         return this._students.map(x => x.toString());
     }
 
-    submitHomework(studentID: number, homeworkID: number): void {
+    public submitHomework(studentID: number, homeworkID: number): void {
         if (!this._students.some(x => x.id === studentID)) {
             throw `No student with id ${studentID} found`;
         }
@@ -61,7 +61,7 @@ export class Course {
         student.submitHomework();
     }
 
-    pushExamResults(results: object[]): void {
+    public pushExamResults(results: object[]): void {
         let allKeys: string[] = results.map(x => Object.keys(x)[0]);
         let uniqueKeys: string[] = this.extractUnique(allKeys);
 
@@ -90,7 +90,7 @@ export class Course {
         }
     }
 
-    getTopStudents(): string[] {
+    public getTopStudents(): string[] {
         const studentsToBeListed: number = 10;
         const examPercent: number = 0.75;
 
