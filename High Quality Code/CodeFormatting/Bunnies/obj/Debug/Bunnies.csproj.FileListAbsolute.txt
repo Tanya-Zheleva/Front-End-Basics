@@ -1,0 +1,7 @@
+E:\Work\Front-End-Basics\High Quality Code\CodeFormatting\Bunnies\bin\Debug\Bunnies.exe.config
+E:\Work\Front-End-Basics\High Quality Code\CodeFormatting\Bunnies\bin\Debug\Bunnies.exe
+E:\Work\Front-End-Basics\High Quality Code\CodeFormatting\Bunnies\bin\Debug\Bunnies.pdb
+E:\Work\Front-End-Basics\High Quality Code\CodeFormatting\Bunnies\obj\Debug\Bunnies.csprojAssemblyReference.cache
+E:\Work\Front-End-Basics\High Quality Code\CodeFormatting\Bunnies\obj\Debug\Bunnies.csproj.CoreCompileInputs.cache
+E:\Work\Front-End-Basics\High Quality Code\CodeFormatting\Bunnies\obj\Debug\Bunnies.exe
+E:\Work\Front-End-Basics\High Quality Code\CodeFormatting\Bunnies\obj\Debug\Bunnies.pdb

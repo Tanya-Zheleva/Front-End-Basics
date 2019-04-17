@@ -1,0 +1,10 @@
+E:\Work\Front-End-Basics\High Quality Code\CodeFormatting\Events\obj\Debug\Events.csprojAssemblyReference.cache
+E:\Work\Front-End-Basics\High Quality Code\CodeFormatting\Events\obj\Debug\Events.csproj.CoreCompileInputs.cache
+E:\Work\Front-End-Basics\High Quality Code\CodeFormatting\Events\bin\Debug\Events.exe.config
+E:\Work\Front-End-Basics\High Quality Code\CodeFormatting\Events\bin\Debug\Events.exe
+E:\Work\Front-End-Basics\High Quality Code\CodeFormatting\Events\bin\Debug\Events.pdb
+E:\Work\Front-End-Basics\High Quality Code\CodeFormatting\Events\bin\Debug\PowerCollections.dll
+E:\Work\Front-End-Basics\High Quality Code\CodeFormatting\Events\bin\Debug\PowerCollections.xml
+E:\Work\Front-End-Basics\High Quality Code\CodeFormatting\Events\obj\Debug\Events.csproj.CopyComplete
+E:\Work\Front-End-Basics\High Quality Code\CodeFormatting\Events\obj\Debug\Events.exe
+E:\Work\Front-End-Basics\High Quality Code\CodeFormatting\Events\obj\Debug\Events.pdb
