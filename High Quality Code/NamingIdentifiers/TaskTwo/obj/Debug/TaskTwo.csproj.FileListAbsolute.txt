@@ -1,0 +1,7 @@
+E:\Work\Front-End-Basics\High Quality Code\NamingIdentifiers\TaskTwo\bin\Debug\TaskTwo.exe.config
+E:\Work\Front-End-Basics\High Quality Code\NamingIdentifiers\TaskTwo\bin\Debug\TaskTwo.exe
+E:\Work\Front-End-Basics\High Quality Code\NamingIdentifiers\TaskTwo\bin\Debug\TaskTwo.pdb
+E:\Work\Front-End-Basics\High Quality Code\NamingIdentifiers\TaskTwo\obj\Debug\TaskTwo.csprojAssemblyReference.cache
+E:\Work\Front-End-Basics\High Quality Code\NamingIdentifiers\TaskTwo\obj\Debug\TaskTwo.csproj.CoreCompileInputs.cache
+E:\Work\Front-End-Basics\High Quality Code\NamingIdentifiers\TaskTwo\obj\Debug\TaskTwo.exe
+E:\Work\Front-End-Basics\High Quality Code\NamingIdentifiers\TaskTwo\obj\Debug\TaskTwo.pdb
