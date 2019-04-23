@@ -118,7 +118,8 @@
         /// <param name="input">A string from which to extract.</param>
         /// <param name="startString">A string indicating the start of the substring.</param>
         /// <param name="endString">A string indicating the end of the substring.</param>
-        /// <param name="startFrom">An optional parameter indicating the start position from which to extract.</param>
+        /// <param name="startFrom">An optional parameter indicating the start position from which to extract. Default value is 0.</param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when startFrom is less than 0.</exception>
         /// <returns>
         /// The string between the given start and end string. 
         /// If not found returns an empty string.
