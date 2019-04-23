@@ -6,8 +6,7 @@
     {
         public static void Main(string[] args)
         {
-            var parsed = StringExtensions.ToValidLatinFileName("test t");
-            Console.WriteLine(parsed);
+           
         }
     }
 }
