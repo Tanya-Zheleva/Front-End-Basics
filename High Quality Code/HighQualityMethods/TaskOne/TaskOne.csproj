@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0D1DD1FC-42F3-4B31-9B1F-33AF7A766F51}</ProjectGuid>
+    <ProjectGuid>{40E6ED7E-E14F-4AA9-91F6-A31D7EE69B0B}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>TaskTwo</RootNamespace>
-    <AssemblyName>TaskTwo</AssemblyName>
+    <RootNamespace>TaskOne</RootNamespace>
+    <AssemblyName>TaskOne</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,8 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Point.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Student.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
