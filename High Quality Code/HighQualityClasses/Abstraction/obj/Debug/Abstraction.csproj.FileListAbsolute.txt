@@ -1,0 +1,7 @@
+E:\Work\Front-End-Basics\High Quality Code\HighQualityClasses\Abstraction\bin\Debug\Abstraction.exe.config
+E:\Work\Front-End-Basics\High Quality Code\HighQualityClasses\Abstraction\bin\Debug\Abstraction.exe
+E:\Work\Front-End-Basics\High Quality Code\HighQualityClasses\Abstraction\bin\Debug\Abstraction.pdb
+E:\Work\Front-End-Basics\High Quality Code\HighQualityClasses\Abstraction\obj\Debug\Abstraction.csprojAssemblyReference.cache
+E:\Work\Front-End-Basics\High Quality Code\HighQualityClasses\Abstraction\obj\Debug\Abstraction.csproj.CoreCompileInputs.cache
+E:\Work\Front-End-Basics\High Quality Code\HighQualityClasses\Abstraction\obj\Debug\Abstraction.exe
+E:\Work\Front-End-Basics\High Quality Code\HighQualityClasses\Abstraction\obj\Debug\Abstraction.pdb

@@ -1,0 +1,7 @@
+E:\Work\Front-End-Basics\High Quality Code\HighQualityClasses\InheritanceАndPolymorphism\bin\Debug\InheritanceАndPolymorphism.exe.config
+E:\Work\Front-End-Basics\High Quality Code\HighQualityClasses\InheritanceАndPolymorphism\bin\Debug\InheritanceАndPolymorphism.exe
+E:\Work\Front-End-Basics\High Quality Code\HighQualityClasses\InheritanceАndPolymorphism\bin\Debug\InheritanceАndPolymorphism.pdb
+E:\Work\Front-End-Basics\High Quality Code\HighQualityClasses\InheritanceАndPolymorphism\obj\Debug\InheritanceАndPolymorphism.csprojAssemblyReference.cache
+E:\Work\Front-End-Basics\High Quality Code\HighQualityClasses\InheritanceАndPolymorphism\obj\Debug\InheritanceАndPolymorphism.csproj.CoreCompileInputs.cache
+E:\Work\Front-End-Basics\High Quality Code\HighQualityClasses\InheritanceАndPolymorphism\obj\Debug\InheritanceАndPolymorphism.exe
+E:\Work\Front-End-Basics\High Quality Code\HighQualityClasses\InheritanceАndPolymorphism\obj\Debug\InheritanceАndPolymorphism.pdb

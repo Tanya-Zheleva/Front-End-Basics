@@ -1,0 +1,7 @@
+E:\Work\Front-End-Basics\High Quality Code\HighQualityClasses\CohesionAndCoupling\bin\Debug\CohesionAndCoupling.exe.config
+E:\Work\Front-End-Basics\High Quality Code\HighQualityClasses\CohesionAndCoupling\bin\Debug\CohesionAndCoupling.exe
+E:\Work\Front-End-Basics\High Quality Code\HighQualityClasses\CohesionAndCoupling\bin\Debug\CohesionAndCoupling.pdb
+E:\Work\Front-End-Basics\High Quality Code\HighQualityClasses\CohesionAndCoupling\obj\Debug\CohesionAndCoupling.csprojAssemblyReference.cache
+E:\Work\Front-End-Basics\High Quality Code\HighQualityClasses\CohesionAndCoupling\obj\Debug\CohesionAndCoupling.csproj.CoreCompileInputs.cache
+E:\Work\Front-End-Basics\High Quality Code\HighQualityClasses\CohesionAndCoupling\obj\Debug\CohesionAndCoupling.exe
+E:\Work\Front-End-Basics\High Quality Code\HighQualityClasses\CohesionAndCoupling\obj\Debug\CohesionAndCoupling.pdb
