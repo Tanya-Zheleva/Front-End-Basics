@@ -19,6 +19,7 @@
                     if (tokens[i] == expectedValue)
                     {
                         currentValue = expectedValue;
+                        break;
                     }
                 }
 

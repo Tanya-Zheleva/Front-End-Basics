@@ -17,10 +17,10 @@
 
             //...
 
-            bool inRangeX = MIN_X <= x && x <= MAX_X;
-            bool inRangeY = MIN_Y <= y && y <= MAX_Y; 
+            bool isInRangeX = MIN_X <= x && x <= MAX_X;
+            bool isInRangeY = MIN_Y <= y && y <= MAX_Y; 
 
-            if (shouldVisitCell && (inRangeX && inRangeY))
+            if (shouldVisitCell && (isInRangeX && isInRangeY))
             {
                 VisitCell();
             }

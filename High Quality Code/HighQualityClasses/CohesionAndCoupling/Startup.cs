@@ -24,10 +24,10 @@
             double z = 5;
 
             Console.WriteLine("Volume = {0:f2}", MathUtils.CalcVolume(x, y, z));
-            Console.WriteLine("Diagonal XYZ = {0:f2}", MathUtils.CalcDiagonalXYZ(x, y, z));
-            Console.WriteLine("Diagonal XY = {0:f2}", MathUtils.CalcDiagonalXY(x, y));
-            Console.WriteLine("Diagonal XZ = {0:f2}", MathUtils.CalcDiagonalXZ(x, z));
-            Console.WriteLine("Diagonal YZ = {0:f2}", MathUtils.CalcDiagonalYZ(y, z));
+            Console.WriteLine("Diagonal XYZ = {0:f2}", MathUtils.CalcDistance3D(x, y, z)); 
+            Console.WriteLine("Diagonal XY = {0:f2}", MathUtils.CalcDistance2D(x, y)); 
+            Console.WriteLine("Diagonal XZ = {0:f2}", MathUtils.CalcDistance2D(x, z));
+            Console.WriteLine("Diagonal YZ = {0:f2}", MathUtils.CalcDistance2D(y, z)); 
         }
     }
 }

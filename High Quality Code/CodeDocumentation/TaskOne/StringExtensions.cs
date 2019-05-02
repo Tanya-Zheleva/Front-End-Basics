@@ -49,7 +49,7 @@
         }
 
         /// <summary>
-        /// Returns the given string converted to a short value.
+        /// Tries to convert the given string to a short value.
         /// </summary>
         /// <param name="input">A string to convert.</param>
         public static short ToShort(this string input)
@@ -61,7 +61,7 @@
         }
 
         /// <summary>
-        /// Returns the given string converted to an integer value.
+        /// Tries to convert the given string to an integer value.
         /// </summary>
         /// <param name="input">A string to convert.</param>
         public static int ToInteger(this string input)
@@ -73,7 +73,7 @@
         }
 
         /// <summary>
-        /// Returns the given string converted to a long value.
+        /// Tries to convert the given string to a long value.
         /// </summary>
         /// <param name="input">A string to convert.</param>
         public static long ToLong(this string input)
@@ -85,7 +85,7 @@
         }
 
         /// <summary>
-        /// Returns the given string converted to a DateTime value.
+        /// Tries to convert the given string to a DateTime value.
         /// </summary>
         /// <param name="input">A string to convert.</param>
         public static DateTime ToDateTime(this string input)

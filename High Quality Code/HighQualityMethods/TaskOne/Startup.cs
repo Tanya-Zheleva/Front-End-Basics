@@ -7,12 +7,12 @@
         public static void Main(string[] args)
         {
             Console.WriteLine(CalcTriangleArea(3, 4, 5));
-            Console.WriteLine(NumberToDigit(5));
+            Console.WriteLine(DigitToString(5));
             Console.WriteLine(FindMax(5, -1, 3, 2, 14, 2, 3));
 
-            PrintAsNumber(1.3, "f");
-            PrintAsNumber(0.75, "%");
-            PrintAsNumber(2.30, "r");
+            PrintNumberByFormat(1.3, "f");
+            PrintNumberByFormat(0.75, "%");
+            PrintNumberByFormat(2.30, "r");
 
             Point pointOne = new Point(3, -1);
             Point pointTwo = new Point(3, 2.5);
@@ -25,8 +25,11 @@
             Console.WriteLine($"Horizontal? {horizontal}");
             Console.WriteLine($"Vertical? {vertical}");
 
-            Student peter = new Student("Peter", "Ivanov", "Sofia", new DateTime(1992, 3, 17));
-            Student stella = new Student("Stella", "Markova", "Vidin", new DateTime(1993, 11, 3), "gamer", "high results");
+            Student peter = new Student("Peter", "Ivanov");
+            peter.OtherInfo = "From Sofia, born at 17.03.1992";
+
+            Student stella = new Student("Stella", "Markova");
+            stella.OtherInfo = "From Vidin, gamer, high results, born at 03.11.1993";
 
             Console.WriteLine($"{peter.FirstName} older than {stella.FirstName} -> {peter.IsOlderThan(stella)}");
         }
@@ -49,50 +52,50 @@
             return area;
         }
 
-        static string NumberToDigit(int number)
+        private static string DigitToString(int digit)
         {
-            if (number < 0 || number > 9)
+            if (digit < 0 || digit > 9)
             {
                 throw new ArgumentException("Invalid Number.");
             }
 
-            string numberAsString = string.Empty;
+            string digitAsString = string.Empty;
 
-            switch (number)
+            switch (digit)
             {
                 case 0:
-                    numberAsString = "zero";
+                    digitAsString = "zero";
                     break;
                 case 1:
-                    numberAsString = "one";
+                    digitAsString = "one";
                     break;
                 case 2:
-                    numberAsString = "two";
+                    digitAsString = "two";
                     break;
                 case 3:
-                    numberAsString = "three";
+                    digitAsString = "three";
                     break;
                 case 4:
-                    numberAsString = "four";
+                    digitAsString = "four";
                     break;
                 case 5:
-                    numberAsString = "five";
+                    digitAsString = "five";
                     break;
                 case 6:
-                    numberAsString = "six";
+                    digitAsString = "six";
                     break;
                 case 7:
-                    numberAsString = "seven";
+                    digitAsString = "seven";
                     break;
                 case 8:
-                    numberAsString = "eight";
+                    digitAsString = "eight";
                     break;
                 case 9:
-                    numberAsString = "nine";
+                    digitAsString = "nine";
                     break;
             }
 
-            return numberAsString;
+            return digitAsString;
         }
 
         private static int FindMax(params int[] elements)
@@ -120,7 +123,7 @@
             return max;
         }
 
-        private static void PrintAsNumber(double number, string format)
+        private static void PrintNumberByFormat(double number, string format)
         {
             if (format != "f" && format != "%" && format != "r")
             {

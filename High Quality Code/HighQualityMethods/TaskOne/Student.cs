@@ -8,17 +8,12 @@
 
         private string firstName;
         private string lastName;
-        private string hometown;
+        private string otherInfo;
 
-        private string[] hobbies;
-
-        public Student(string firstName, string lastName, string hometown, DateTime birthday, params string[] hobbies)
+        public Student(string firstName, string lastName)
         {
             this.FirstName = firstName;
             this.LastName = lastName;
-            this.Hometown = hometown;
-            this.Birthday = birthday;
-            this.Hobbies = hobbies;
         }
 
         public string FirstName
@@ -27,6 +22,7 @@
             {
                 return this.firstName;
             }
+
             set
             {
                 if (string.IsNullOrEmpty(value))
@@ -44,6 +40,7 @@
             {
                 return this.lastName;
             }
+
             set
             {
                 if (string.IsNullOrEmpty(value))
@@ -55,47 +52,30 @@
             }
         }
 
-        public string Hometown
+        public string OtherInfo
         {
             get
             {
-                return this.hometown;
+                return this.otherInfo;
             }
+
             set
             {
                 if (string.IsNullOrEmpty(value))
                 {
-                    throw new ArgumentException("Invalid hometown.");
+                    throw new ArgumentException("Student other info cannot be null or an empty string.");
                 }
 
-                this.hometown = value;
+                this.otherInfo = value;
             }
         }
 
-        public DateTime Birthday { get; set; }
-
-        public string[] Hobbies
+        public bool IsOlderThan(Student otherStudent)
         {
-            get
-            {
-                return this.hobbies;
-            }
-            set
-            {
-                if (value.Length == 0)
-                {
-                    value = new string[] { DefaultHobby };
-                }
+            DateTime firstDate = DateTime.Parse(this.OtherInfo.Substring(this.OtherInfo.Length - 10));
+            DateTime secondDate = DateTime.Parse(otherStudent.OtherInfo.Substring(otherStudent.OtherInfo.Length - 10));
 
-                this.hobbies = value;
-            }
-        }
-
-        public bool IsOlderThan(Student other)
-        {
-            bool isOlder = this.Birthday > other.Birthday;
-
-            return isOlder;
+            return firstDate > secondDate;
         }
     }
 }
