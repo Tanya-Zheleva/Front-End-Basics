@@ -104,9 +104,19 @@
 
         public static string ExtractEnding(string str, int count)
         {
+            if (string.IsNullOrEmpty(str))
+            {
+                throw new ArgumentException("String cannot be null or empty.");
+            }
+
+            if (count < 0)
+            {
+                throw new ArgumentException("Count cannot be a negative.");
+            }
+
             if (count > str.Length)
             {
-                throw new ArgumentException("Invalid amount of characters to extract.");
+                throw new ArgumentException("Count cannot be greater than the string length.");
             }
 
             StringBuilder result = new StringBuilder();
