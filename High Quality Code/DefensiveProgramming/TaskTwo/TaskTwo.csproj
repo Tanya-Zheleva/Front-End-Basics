@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{51635484-86A5-47A7-B259-00C2AA3C81F7}</ProjectGuid>
+    <ProjectGuid>{9DB942F4-3442-48B4-A81D-2DA7FC1B4EBB}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>TaskOne</RootNamespace>
-    <AssemblyName>TaskOne</AssemblyName>
+    <RootNamespace>TaskTwo</RootNamespace>
+    <AssemblyName>TaskTwo</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,13 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CSharpExam.cs" />
-    <Compile Include="Exam.cs" />
-    <Compile Include="ExamResult.cs" />
-    <Compile Include="SimpleMathExam.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Student.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
