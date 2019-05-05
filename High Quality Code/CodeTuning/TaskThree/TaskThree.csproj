@@ -43,7 +43,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DecimalDiagnostics.cs" />
     <Compile Include="DoubleDiagnostics.cs" />
     <Compile Include="FloatDiagnostics.cs" />
     <Compile Include="Startup.cs" />

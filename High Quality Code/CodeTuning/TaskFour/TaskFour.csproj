@@ -43,9 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="InsertionSortDiagnostics.cs" />
+    <Compile Include="InsertionSorter.cs" />
     <Compile Include="Quicksorter.cs" />
-    <Compile Include="SelectionSortDiagnostics.cs" />
+    <Compile Include="SelectionSorter.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
