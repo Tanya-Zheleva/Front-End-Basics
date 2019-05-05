@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F2B6DDB0-4D2C-46D1-A2E2-A85BAEB70A89}</ProjectGuid>
+    <ProjectGuid>{2772DD23-68DB-4CFE-975A-6A85FEFC63AC}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>TaskTwo</RootNamespace>
-    <AssemblyName>TaskTwo</AssemblyName>
+    <RootNamespace>TaskFour</RootNamespace>
+    <AssemblyName>TaskFour</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,11 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DecimalDiagnostics.cs" />
-    <Compile Include="DoubleDiagnostics.cs" />
-    <Compile Include="FloatDiagnostics.cs" />
-    <Compile Include="IntDiagnostics.cs" />
-    <Compile Include="LongDiagnostics.cs" />
+    <Compile Include="InsertionSortDiagnostics.cs" />
+    <Compile Include="Quicksorter.cs" />
+    <Compile Include="SelectionSortDiagnostics.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

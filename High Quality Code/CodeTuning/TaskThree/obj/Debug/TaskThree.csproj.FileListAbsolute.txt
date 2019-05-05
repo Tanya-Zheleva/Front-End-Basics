@@ -1,0 +1,7 @@
+E:\Work\Front-End-Basics\High Quality Code\CodeTuning\TaskThree\bin\Debug\TaskThree.exe.config
+E:\Work\Front-End-Basics\High Quality Code\CodeTuning\TaskThree\bin\Debug\TaskThree.exe
+E:\Work\Front-End-Basics\High Quality Code\CodeTuning\TaskThree\bin\Debug\TaskThree.pdb
+E:\Work\Front-End-Basics\High Quality Code\CodeTuning\TaskThree\obj\Debug\TaskThree.csproj.CoreCompileInputs.cache
+E:\Work\Front-End-Basics\High Quality Code\CodeTuning\TaskThree\obj\Debug\TaskThree.exe
+E:\Work\Front-End-Basics\High Quality Code\CodeTuning\TaskThree\obj\Debug\TaskThree.pdb
+E:\Work\Front-End-Basics\High Quality Code\CodeTuning\TaskThree\obj\Debug\TaskThree.csprojAssemblyReference.cache

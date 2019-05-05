@@ -1,0 +1,7 @@
+E:\Work\Front-End-Basics\High Quality Code\CodeTuning\TaskFour\bin\Debug\TaskFour.exe.config
+E:\Work\Front-End-Basics\High Quality Code\CodeTuning\TaskFour\bin\Debug\TaskFour.exe
+E:\Work\Front-End-Basics\High Quality Code\CodeTuning\TaskFour\bin\Debug\TaskFour.pdb
+E:\Work\Front-End-Basics\High Quality Code\CodeTuning\TaskFour\obj\Debug\TaskFour.csprojAssemblyReference.cache
+E:\Work\Front-End-Basics\High Quality Code\CodeTuning\TaskFour\obj\Debug\TaskFour.csproj.CoreCompileInputs.cache
+E:\Work\Front-End-Basics\High Quality Code\CodeTuning\TaskFour\obj\Debug\TaskFour.exe
+E:\Work\Front-End-Basics\High Quality Code\CodeTuning\TaskFour\obj\Debug\TaskFour.pdb
