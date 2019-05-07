@@ -1,0 +1,17 @@
+E:\Tanya\Test\Front-End-Basics\High Quality Code\Refactoring\TaskOne.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+E:\Tanya\Test\Front-End-Basics\High Quality Code\Refactoring\TaskOne.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+E:\Tanya\Test\Front-End-Basics\High Quality Code\Refactoring\TaskOne.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+E:\Tanya\Test\Front-End-Basics\High Quality Code\Refactoring\TaskOne.Tests\bin\Debug\TaskOne.Tests.dll
+E:\Tanya\Test\Front-End-Basics\High Quality Code\Refactoring\TaskOne.Tests\bin\Debug\TaskOne.Tests.pdb
+E:\Tanya\Test\Front-End-Basics\High Quality Code\Refactoring\TaskOne.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+E:\Tanya\Test\Front-End-Basics\High Quality Code\Refactoring\TaskOne.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+E:\Tanya\Test\Front-End-Basics\High Quality Code\Refactoring\TaskOne.Tests\bin\Debug\TaskOne.exe
+E:\Tanya\Test\Front-End-Basics\High Quality Code\Refactoring\TaskOne.Tests\bin\Debug\TaskOne.pdb
+E:\Tanya\Test\Front-End-Basics\High Quality Code\Refactoring\TaskOne.Tests\bin\Debug\TaskOne.exe.config
+E:\Tanya\Test\Front-End-Basics\High Quality Code\Refactoring\TaskOne.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+E:\Tanya\Test\Front-End-Basics\High Quality Code\Refactoring\TaskOne.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+E:\Tanya\Test\Front-End-Basics\High Quality Code\Refactoring\TaskOne.Tests\obj\Debug\TaskOne.Tests.csprojAssemblyReference.cache
+E:\Tanya\Test\Front-End-Basics\High Quality Code\Refactoring\TaskOne.Tests\obj\Debug\TaskOne.Tests.csproj.CoreCompileInputs.cache
+E:\Tanya\Test\Front-End-Basics\High Quality Code\Refactoring\TaskOne.Tests\obj\Debug\TaskOne.Tests.csproj.CopyComplete
+E:\Tanya\Test\Front-End-Basics\High Quality Code\Refactoring\TaskOne.Tests\obj\Debug\TaskOne.Tests.dll
+E:\Tanya\Test\Front-End-Basics\High Quality Code\Refactoring\TaskOne.Tests\obj\Debug\TaskOne.Tests.pdb
