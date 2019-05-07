@@ -180,7 +180,19 @@
         [TestMethod]
         public void ChangeDirection_ChangesDirectionCorrectly()
         {
+            int[] directionsX = { 1, 1, 1, 0, -1, -1, -1, 0 };
+            int[] directionsY = { 1, 0, -1, -1, -1, 0, 1, 1 };
 
+            int dx = 1;
+            int dy = 1;
+
+            for (int i = 1; i < directionsX.Length; i++)
+            {
+                MatrixWalk.ChangeDirection(ref dx, ref dy);
+
+                Assert.AreEqual(directionsX[i], dx);
+                Assert.AreEqual(directionsY[i], dy);
+            }
         }
     }
 }
