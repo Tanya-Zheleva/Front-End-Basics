@@ -3,13 +3,22 @@
     using System;
     using System.Diagnostics;
 
-    public static class DoubleDiagnostics
+    public class DoubleDiagnostic : IDiagnosable
     {
         private const int RepeatTimes = 100000000;
 
-        public static void TestAdd()
+        public void Test()
         {
-            long value = 0;
+            this.TestAdd();
+            this.TestSubtract();
+            this.TestIncrement();
+            this.TestMultiply();
+            this.TestDivide();
+        }
+
+        private void TestAdd()
+        {
+            double value = 0;
 
             Stopwatch watch = Stopwatch.StartNew();
 
@@ -22,9 +31,9 @@
             Console.WriteLine($"Double add: {watch.Elapsed}");
         }
 
-        public static void TestSubtract()
+        private void TestSubtract()
         {
-            long value = 0;
+            double value = 0;
 
             Stopwatch watch = Stopwatch.StartNew();
 
@@ -37,9 +46,9 @@
             Console.WriteLine($"Double subtract: {watch.Elapsed}");
         }
 
-        public static void TestIncrement()
+        private void TestIncrement()
         {
-            long value = 0;
+            double value = 0;
 
             Stopwatch watch = Stopwatch.StartNew();
 
@@ -52,24 +61,24 @@
             Console.WriteLine($"Double increment: {watch.Elapsed}");
         }
 
-        public static void TestMultiply()
+        private void TestMultiply()
         {
-            long value = 1;
+            double value = 1;
 
             Stopwatch watch = Stopwatch.StartNew();
 
             for (int i = 0; i < RepeatTimes; i++)
             {
-                value *= 2;
+                value *= 1;
             }
 
             watch.Stop();
             Console.WriteLine($"Double multiply: {watch.Elapsed}");
         }
 
-        public static void TestDivide()
+        private void TestDivide()
         {
-            long value = 1;
+            double value = 1;
 
             Stopwatch watch = Stopwatch.StartNew();
 

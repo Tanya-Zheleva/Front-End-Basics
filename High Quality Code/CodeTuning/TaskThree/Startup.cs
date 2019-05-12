@@ -4,11 +4,11 @@
     {
         public static void Main(string[] args)
         {
-            FloatDiagnostics.TestSqrt();
-            DoubleDiagnostics.TestSqrt();
+            IDiagnosable doubleDiagnostic = new DoubleDiagnostic();
+            //doubleDiagnostic.Test();
 
-            //FloatDiagnostics.TestNaturalLog();
-            //FloatDiagnostics.TestSinus();
+            IDiagnosable floatDiagnostic = new FloatDiagnostic();
+            floatDiagnostic.Test();
         }
     }
 }

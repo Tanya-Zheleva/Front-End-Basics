@@ -43,11 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DecimalDiagnostics.cs" />
-    <Compile Include="DoubleDiagnostics.cs" />
-    <Compile Include="FloatDiagnostics.cs" />
-    <Compile Include="IntDiagnostics.cs" />
-    <Compile Include="LongDiagnostics.cs" />
+    <Compile Include="DecimalDiagnostic.cs" />
+    <Compile Include="DoubleDiagnostic.cs" />
+    <Compile Include="FloatDiagnostic.cs" />
+    <Compile Include="IDiagnosable.cs" />
+    <Compile Include="IntDiagnostic.cs" />
+    <Compile Include="LongDiagnostic.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

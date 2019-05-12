@@ -3,11 +3,20 @@
     using System;
     using System.Diagnostics;
 
-    public static class LongDiagnostics
+    public class LongDiagnostic : IDiagnosable
     {
         private const int RepeatTimes = 100000000;
 
-        public static void TestAdd()
+        public void Test()
+        {
+            this.TestAdd();
+            this.TestSubtract();
+            this.TestIncrement();
+            this.TestMultiply();
+            this.TestDivide();
+        }
+
+        private void TestAdd()
         {
             long value = 0;
 
@@ -22,7 +31,7 @@
             Console.WriteLine($"Long add: {watch.Elapsed}");
         }
 
-        public static void TestSubtract()
+        private void TestSubtract()
         {
             long value = 0;
 
@@ -37,7 +46,7 @@
             Console.WriteLine($"Long subtract: {watch.Elapsed}");
         }
 
-        public static void TestIncrement()
+        private void TestIncrement()
         {
             long value = 0;
 
@@ -52,7 +61,7 @@
             Console.WriteLine($"Long increment: {watch.Elapsed}");
         }
 
-        public static void TestMultiply()
+        private void TestMultiply()
         {
             long value = 1;
 
@@ -60,14 +69,14 @@
 
             for (int i = 0; i < RepeatTimes; i++)
             {
-                value *= 2;
+                value *= 1;
             }
 
             watch.Stop();
             Console.WriteLine($"Long multiply: {watch.Elapsed}");
         }
 
-        public static void TestDivide()
+        private void TestDivide()
         {
             // Same as 1000000
             long value = 1;

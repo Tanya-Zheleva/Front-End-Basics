@@ -3,13 +3,22 @@
     using System;
     using System.Diagnostics;
 
-    public static class IntDiagnostics
+    public class DecimalDiagnostic : IDiagnosable
     {
         private const int RepeatTimes = 100000000;
 
-        public static void TestAdd()
+        public void Test()
         {
-            int value = 0;
+            this.TestAdd();
+            this.TestSubtract();
+            this.TestIncrement();
+            this.TestMultiply();
+            this.TestDivide();
+        }
+
+        private void TestAdd()
+        {
+            decimal value = 0m;
 
             Stopwatch watch = Stopwatch.StartNew();
 
@@ -19,12 +28,12 @@
             }
 
             watch.Stop();
-            Console.WriteLine($"Int add: {watch.Elapsed}");
+            Console.WriteLine($"Decimal add: {watch.Elapsed}");
         }
 
-        public static void TestSubtract()
+        private void TestSubtract()
         {
-            int value = 0;
+            decimal value = 0m;
 
             Stopwatch watch = Stopwatch.StartNew();
 
@@ -34,12 +43,12 @@
             }
 
             watch.Stop();
-            Console.WriteLine($"Int subtract: {watch.Elapsed}");
+            Console.WriteLine($"Decimal subtract: {watch.Elapsed}");
         }
 
-        public static void TestIncrement()
+        private void TestIncrement()
         {
-            int value = 0;
+            decimal value = 0m;
 
             Stopwatch watch = Stopwatch.StartNew();
 
@@ -49,28 +58,27 @@
             }
 
             watch.Stop();
-            Console.WriteLine($"Int increment: {watch.Elapsed}");
+            Console.WriteLine($"Decimal increment: {watch.Elapsed}");
         }
 
-        public static void TestMultiply()
+        private void TestMultiply()
         {
-            int value = 1;
+            decimal value = 1m;
 
             Stopwatch watch = Stopwatch.StartNew();
 
             for (int i = 0; i < RepeatTimes; i++)
             {
-                value *= 2;
+                value *= 1;
             }
 
             watch.Stop();
-            Console.WriteLine($"Int multiply: {watch.Elapsed}");
+            Console.WriteLine($"Decimal multiply: {watch.Elapsed}");
         }
 
-        public static void TestDivide()
+        private void TestDivide()
         {
-            // Same as 1000000
-            int value = 1;
+            decimal value = 1m;
 
             Stopwatch watch = Stopwatch.StartNew();
 
@@ -80,7 +88,7 @@
             }
 
             watch.Stop();
-            Console.WriteLine($"Int divide: {watch.Elapsed}");
+            Console.WriteLine($"Decimal divide: {watch.Elapsed}");
         }
     }
 }

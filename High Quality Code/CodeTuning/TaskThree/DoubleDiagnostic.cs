@@ -3,13 +3,20 @@
     using System;
     using System.Diagnostics;
 
-    public static class FloatDiagnostics
+    public class DoubleDiagnostic : IDiagnosable
     {
         private const int RepeatTimes = 100000000;
 
-        public static void TestSqrt()
+        public void Test()
         {
-            float value = 2;
+            this.TestSqrt();
+            this.TestNaturalLog();
+            this.TestSinus();
+        }
+
+        private void TestSqrt()
+        {
+            double value = 2;
 
             Stopwatch watch = Stopwatch.StartNew();
 
@@ -19,12 +26,12 @@
             }
 
             watch.Stop();
-            Console.WriteLine($"Float sqrt: {watch.Elapsed}");
+            Console.WriteLine($"Double sqrt: {watch.Elapsed}");
         }
 
-        public static void TestNaturalLog()
+        private void TestNaturalLog()
         {
-            float value = 2;
+            double value = 2;
 
             Stopwatch watch = Stopwatch.StartNew();
 
@@ -34,12 +41,12 @@
             }
 
             watch.Stop();
-            Console.WriteLine($"Float natural logarithm: {watch.Elapsed}");
+            Console.WriteLine($"Double natural logarithm: {watch.Elapsed}");
         }
 
-        public static void TestSinus()
+        private void TestSinus()
         {
-            float value = 3.14f / 4;
+            double value = 3.14 / 4;
 
             Stopwatch watch = Stopwatch.StartNew();
 
@@ -49,7 +56,7 @@
             }
 
             watch.Stop();
-            Console.WriteLine($"Float sinus: {watch.Elapsed}");
+            Console.WriteLine($"Double sinus: {watch.Elapsed}");
         }
     }
 }
