@@ -18,40 +18,42 @@
             int n = 6;
             int[,] matrix = new int[n, n];
             int value = 1;
-            int row = 0;
-            int col = 0;
-            int dx = 1;
-            int dy = 1;
+            Cell cell = new Cell();
+            Path path = new Path { Dx = 1, Dy = 1 };
 
             while (HasEmptyCell(matrix))
             {
-                matrix[row, col] = value;
+                matrix[cell.Row, cell.Col] = value;
 
-                if (!HasEmptySurroundingCells(matrix, row, col))
+                if (!HasEmptySurroundingCells(matrix, cell))
                 {
                     if (!HasEmptyCell(matrix))
                     {
                         break;
                     }
 
-                    FindEmptyCell(matrix, ref row, ref col);
+                    FindEmptyCell(matrix, cell);
 
-                    dx = 1;
-                    dy = 1;
+                    path.Dx = 1;
+                    path.Dy = 1;
                     value++;
-                    matrix[row, col] = value;
+                    matrix[cell.Row, cell.Col] = value;
                 }
 
-                if (row + dx >= n || row + dx < 0 || col + dy >= n || col + dy < 0 || matrix[row + dx, col + dy] != 0)
+                if (cell.Row + path.Dx >= n || cell.Row + path.Dx < 0 ||
+                        cell.Col + path.Dy >= n || cell.Col + path.Dy < 0 || 
+                        matrix[cell.Row + path.Dx, cell.Col + path.Dy] != 0)
                 {
-                    while (row + dx >= n || row + dx < 0 || col + dy >= n || col + dy < 0 || matrix[row + dx, col + dy] != 0)
+                    while (cell.Row + path.Dx >= n || cell.Row + path.Dx < 0 ||
+                            cell.Col + path.Dy >= n || cell.Col + path.Dy < 0 ||
+                            matrix[cell.Row + path.Dx, cell.Col + path.Dy] != 0)
                     {
-                        ChangeDirection(ref dx, ref dy);
+                        ChangeDirection(path);
                     }
                 }
 
-                row += dx;
-                col += dy;
+                cell.Row += path.Dx;
+                cell.Col += path.Dy;
                 value++;
             }
 
@@ -66,7 +68,7 @@
             }
         }
 
-        public static void ChangeDirection(ref int dx, ref int dy)
+        public static void ChangeDirection(Path path)
         {
             int[] directionsX = { 1, 1, 1, 0, -1, -1, -1, 0 };
             int[] directionsY = { 1, 0, -1, -1, -1, 0, 1, 1 };
@@ -74,7 +76,7 @@
 
             for (int i = 0; i < directionsX.Length; i++)
             {
-                if (directionsX[i] == dx && directionsY[i] == dy)
+                if (directionsX[i] == path.Dx && directionsY[i] == path.Dy)
                 {
                     dicrectionIndex = i;
 
@@ -84,29 +86,29 @@
 
             if (dicrectionIndex == directionsX.Length - 1)
             {
-                dx = directionsX[0];
-                dy = directionsY[0];
+                path.Dx = directionsX[0];
+                path.Dy = directionsY[0];
 
                 return;
             }
 
-            dx = directionsX[dicrectionIndex + 1];
-            dy = directionsY[dicrectionIndex + 1];
+            path.Dx = directionsX[dicrectionIndex + 1];
+            path.Dy = directionsY[dicrectionIndex + 1];
         }
 
-        public static bool HasEmptySurroundingCells(int[,] matrix, int row, int col)
+        public static bool HasEmptySurroundingCells(int[,] matrix, Cell cell)
         {
             int[] directionsX = { 1, 1, 1, 0, -1, -1, -1, 0 };
             int[] directionsY = { 1, 0, -1, -1, -1, 0, 1, 1 };
 
             for (int i = 0; i < directionsX.Length; i++)
             {
-                if (row + directionsX[i] >= matrix.GetLength(0) || row + directionsX[i] < 0)
+                if (cell.Row + directionsX[i] >= matrix.GetLength(0) || cell.Row + directionsX[i] < 0)
                 {
                     directionsX[i] = 0;
                 }
 
-                if (col + directionsY[i] >= matrix.GetLength(1) || col + directionsY[i] < 0)
+                if (cell.Col + directionsY[i] >= matrix.GetLength(1) || cell.Col + directionsY[i] < 0)
                 {
                     directionsY[i] = 0;
                 }
@@ -114,7 +116,7 @@
 
             for (int i = 0; i < directionsX.Length; i++)
             {
-                if (matrix[row + directionsX[i], col + directionsY[i]] == 0)
+                if (matrix[cell.Row + directionsX[i], cell.Col + directionsY[i]] == 0)
                 {
                     return true;
                 }
@@ -139,7 +141,7 @@
             return false;
         }
 
-        public static void FindEmptyCell(int[,] matrix, ref int row, ref int col)
+        public static void FindEmptyCell(int[,] matrix, Cell cell)
         {
             for (int r = 0; r < matrix.GetLength(0); r++)
             {
@@ -147,8 +149,8 @@
                 {
                     if (matrix[r, c] == 0)
                     {
-                        row = r;
-                        col = c;
+                        cell.Row = r;
+                        cell.Col = c;
 
                         return;
                     }

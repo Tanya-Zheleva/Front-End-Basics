@@ -6,11 +6,13 @@
     public class MatrixWalkTests
     {
         private int[,] matrix;
+        private Cell cell;
        
         [TestInitialize]
         public void Initialize()
         {
-            matrix = new int[5, 5];
+            this.cell = new Cell { Row = 2, Col = 3 };
+            this.matrix = new int[5, 5];
 
             for (int r = 0; r < this.matrix.GetLength(0); r++)
             {
@@ -24,18 +26,16 @@
         [TestMethod]
         public void FindEmptyCell_ReturnsCorrectResult()
         {
-            int targetX = 2;
-            int targetY = 3;
-            this.matrix[targetX, targetY] = 0;
+            int targetRow = 1;
+            int targetCol = 3;
+            this.matrix[targetRow, targetCol] = 0;
 
-            int x = 0;
-            int y = 0;
+            Cell cell = new Cell();
 
-            int[,] matrix1 = this.matrix;
-            MatrixWalk.FindEmptyCell(matrix1, ref x, ref y);
+            MatrixWalk.FindEmptyCell(this.matrix, cell);
 
-            Assert.AreEqual(targetX, x);
-            Assert.AreEqual(targetY, y);
+            Assert.AreEqual(targetRow, cell.Row);
+            Assert.AreEqual(targetCol, cell.Col);
         }
 
         [TestMethod]
@@ -62,9 +62,7 @@
             int emptyY = 3;
             this.matrix[emptyX, emptyY] = 0;
 
-            int x = 2;
-            int y = 3;
-            bool isTopEmpty = MatrixWalk.HasEmptySurroundingCells(this.matrix, x, y);
+            bool isTopEmpty = MatrixWalk.HasEmptySurroundingCells(this.matrix, this.cell);
 
             Assert.IsTrue(isTopEmpty);
         }
@@ -76,9 +74,7 @@
             int emptyY = 4;
             this.matrix[emptyX, emptyY] = 0;
 
-            int x = 2;
-            int y = 3;
-            bool isRightEmpty = MatrixWalk.HasEmptySurroundingCells(this.matrix, x, y);
+            bool isRightEmpty = MatrixWalk.HasEmptySurroundingCells(this.matrix, this.cell);
 
             Assert.IsTrue(isRightEmpty);
         }
@@ -90,9 +86,7 @@
             int emptyY = 3;
             this.matrix[emptyX, emptyY] = 0;
 
-            int x = 2;
-            int y = 3;
-            bool isBottomRmpty = MatrixWalk.HasEmptySurroundingCells(this.matrix, x, y);
+            bool isBottomRmpty = MatrixWalk.HasEmptySurroundingCells(this.matrix, this.cell);
 
             Assert.IsTrue(isBottomRmpty);
         }
@@ -104,9 +98,7 @@
             int emptyY = 2;
             this.matrix[emptyX, emptyY] = 0;
 
-            int x = 2;
-            int y = 3;
-            bool isLeftEmpty = MatrixWalk.HasEmptySurroundingCells(this.matrix, x, y);
+            bool isLeftEmpty = MatrixWalk.HasEmptySurroundingCells(this.matrix, this.cell);
 
             Assert.IsTrue(isLeftEmpty);
         }
@@ -118,9 +110,7 @@
             int emptyY = 4;
             this.matrix[emptyX, emptyY] = 0;
 
-            int x = 2;
-            int y = 3;
-            bool isTopRightEmpty = MatrixWalk.HasEmptySurroundingCells(this.matrix, x, y);
+            bool isTopRightEmpty = MatrixWalk.HasEmptySurroundingCells(this.matrix, this.cell);
 
             Assert.IsTrue(isTopRightEmpty);
         }
@@ -132,9 +122,7 @@
             int emptyY = 4;
             this.matrix[emptyX, emptyY] = 0;
 
-            int x = 2;
-            int y = 3;
-            bool isBottomRightEmpty = MatrixWalk.HasEmptySurroundingCells(this.matrix, x, y);
+            bool isBottomRightEmpty = MatrixWalk.HasEmptySurroundingCells(this.matrix, this.cell);
 
             Assert.IsTrue(isBottomRightEmpty);
         }
@@ -146,9 +134,7 @@
             int emptyY = 2;
             this.matrix[emptyX, emptyY] = 0;
 
-            int x = 2;
-            int y = 3;
-            bool isBottomLeftEmpty = MatrixWalk.HasEmptySurroundingCells(this.matrix, x, y);
+            bool isBottomLeftEmpty = MatrixWalk.HasEmptySurroundingCells(this.matrix, this.cell);
 
             Assert.IsTrue(isBottomLeftEmpty);
         }
@@ -160,9 +146,7 @@
             int emptyY = 2;
             this.matrix[emptyX, emptyY] = 0;
 
-            int x = 2;
-            int y = 3;
-            bool isTopLeftEmpty = MatrixWalk.HasEmptySurroundingCells(this.matrix, x, y);
+            bool isTopLeftEmpty = MatrixWalk.HasEmptySurroundingCells(this.matrix, this.cell);
 
             Assert.IsTrue(isTopLeftEmpty);
         }
@@ -170,9 +154,7 @@
         [TestMethod]
         public void HasEmptySurroundingCells_ReturnsFalse_NoCellFound()
         {
-            int x = 2;
-            int y = 3;
-            bool isEmpty = MatrixWalk.HasEmptySurroundingCells(this.matrix, x, y);
+            bool isEmpty = MatrixWalk.HasEmptySurroundingCells(this.matrix, this.cell);
 
             Assert.IsFalse(isEmpty);
         }
@@ -183,15 +165,14 @@
             int[] directionsX = { 1, 1, 1, 0, -1, -1, -1, 0 };
             int[] directionsY = { 1, 0, -1, -1, -1, 0, 1, 1 };
 
-            int dx = 1;
-            int dy = 1;
+            Path path = new Path { Dx = 1, Dy = 1 };
 
             for (int i = 1; i < directionsX.Length; i++)
             {
-                MatrixWalk.ChangeDirection(ref dx, ref dy);
+                MatrixWalk.ChangeDirection(path);
 
-                Assert.AreEqual(directionsX[i], dx);
-                Assert.AreEqual(directionsY[i], dy);
+                Assert.AreEqual(directionsX[i], path.Dx);
+                Assert.AreEqual(directionsY[i], path.Dy);
             }
         }
     }
