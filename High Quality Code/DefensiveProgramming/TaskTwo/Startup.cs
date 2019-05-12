@@ -45,6 +45,10 @@
 
         private static int FindMinElementIndex<T>(T[] arr, int startIndex, int endIndex) where T : IComparable<T>
         {
+            Debug.Assert(startIndex >= 0, "Start index must be greater than or equal to 0.");
+            Debug.Assert(startIndex < endIndex, "Start index must be less than of equal to end index.");
+            Debug.Assert(endIndex <= arr.Length, "End index must be less than array length.");
+
             int minElementIndex = startIndex;
 
             for (int i = startIndex + 1; i <= endIndex; i++)
@@ -67,6 +71,10 @@
 
         private static int BinarySearch<T>(T[] arr, T value, int startIndex, int endIndex) where T : IComparable<T>
         {
+            Debug.Assert(startIndex >= 0, "Start index must be greater than or equal to 0.");
+            Debug.Assert(startIndex < endIndex, "Start index must be less than of equal to end index.");
+            Debug.Assert(endIndex <= arr.Length, "End index must be less than array length.");
+
             while (startIndex <= endIndex)
             {
                 int midIndex = (startIndex + endIndex) / 2;

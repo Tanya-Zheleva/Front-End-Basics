@@ -4,3 +4,9 @@ E:\Tanya\Test\Front-End-Basics\High Quality Code\DefensiveProgramming\TaskTwo\bi
 E:\Tanya\Test\Front-End-Basics\High Quality Code\DefensiveProgramming\TaskTwo\bin\Debug\TaskTwo.pdb
 E:\Tanya\Test\Front-End-Basics\High Quality Code\DefensiveProgramming\TaskTwo\obj\Debug\TaskTwo.exe
 E:\Tanya\Test\Front-End-Basics\High Quality Code\DefensiveProgramming\TaskTwo\obj\Debug\TaskTwo.pdb
+E:\Work\Front-End-Basics\High Quality Code\DefensiveProgramming\TaskTwo\bin\Debug\TaskTwo.exe.config
+E:\Work\Front-End-Basics\High Quality Code\DefensiveProgramming\TaskTwo\bin\Debug\TaskTwo.exe
+E:\Work\Front-End-Basics\High Quality Code\DefensiveProgramming\TaskTwo\bin\Debug\TaskTwo.pdb
+E:\Work\Front-End-Basics\High Quality Code\DefensiveProgramming\TaskTwo\obj\Debug\TaskTwo.csproj.CoreCompileInputs.cache
+E:\Work\Front-End-Basics\High Quality Code\DefensiveProgramming\TaskTwo\obj\Debug\TaskTwo.exe
+E:\Work\Front-End-Basics\High Quality Code\DefensiveProgramming\TaskTwo\obj\Debug\TaskTwo.pdb

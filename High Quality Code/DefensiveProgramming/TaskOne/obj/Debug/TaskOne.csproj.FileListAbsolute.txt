@@ -5,3 +5,10 @@ E:\Tanya\Test\Front-End-Basics\High Quality Code\DefensiveProgramming\TaskOne\ob
 E:\Tanya\Test\Front-End-Basics\High Quality Code\DefensiveProgramming\TaskOne\obj\Debug\TaskOne.csproj.CoreCompileInputs.cache
 E:\Tanya\Test\Front-End-Basics\High Quality Code\DefensiveProgramming\TaskOne\obj\Debug\TaskOne.exe
 E:\Tanya\Test\Front-End-Basics\High Quality Code\DefensiveProgramming\TaskOne\obj\Debug\TaskOne.pdb
+E:\Work\Front-End-Basics\High Quality Code\DefensiveProgramming\TaskOne\bin\Debug\TaskOne.exe.config
+E:\Work\Front-End-Basics\High Quality Code\DefensiveProgramming\TaskOne\bin\Debug\TaskOne.exe
+E:\Work\Front-End-Basics\High Quality Code\DefensiveProgramming\TaskOne\bin\Debug\TaskOne.pdb
+E:\Work\Front-End-Basics\High Quality Code\DefensiveProgramming\TaskOne\obj\Debug\TaskOne.csprojAssemblyReference.cache
+E:\Work\Front-End-Basics\High Quality Code\DefensiveProgramming\TaskOne\obj\Debug\TaskOne.csproj.CoreCompileInputs.cache
+E:\Work\Front-End-Basics\High Quality Code\DefensiveProgramming\TaskOne\obj\Debug\TaskOne.exe
+E:\Work\Front-End-Basics\High Quality Code\DefensiveProgramming\TaskOne\obj\Debug\TaskOne.pdb
