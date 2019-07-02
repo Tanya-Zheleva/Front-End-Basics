@@ -16,5 +16,8 @@
     "babel-preset-env": "^1.7.0",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0"
+  },
+  "dependencies": {
+    "braces": "^3.0.2"
   }
 }
