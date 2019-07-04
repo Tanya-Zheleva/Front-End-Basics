@@ -13,7 +13,7 @@ export interface IMovie {
     country: string;
     awards: string;
     poster: string;
-    metascore: number;
+    metascore: string;
     imdbRating: number;
     imdbVotes: number;
     imdbID: string;

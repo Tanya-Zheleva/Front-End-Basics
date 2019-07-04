@@ -10,7 +10,7 @@
         <div class="form-row col-md-8">
             <div class="form-group col-md-6">
                 <label for="sort">Sort</label>
-                <select name="sort" id="sort" class="form-control">
+                <select name="sort" id="sort" class="form-control" [(ngModel)]="sortType">
                     <option>Rating</option>
                     <option>Title</option>
                     <option>Year</option>
@@ -18,7 +18,7 @@
             </div>
             <div class="form-group col-md-6">
                 <label for="other">Other</label>
-                <select name="other" id="other" class="form-control">
+                <select name="other" id="other" class="form-control" [(ngModel)]="sortOrder">
                     <option>Asc</option>
                     <option>Desc</option>
                 </select>
@@ -26,7 +26,7 @@
         </div>
     </div>
 
-    <table class="table">
+    <table class="table" *ngIf="movies && movies.length">
         <thead>
             <tr>
                 <th scope="col">Poster</th>
@@ -36,18 +36,18 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let movie of filteredMovies">
+            <tr *ngFor="let movie of (filteredMovies | sort: [sortType, sortOrder])">
                 <td>
-                    <img [src]="movie.Poster" [title]="movie.Title">
+                    <img [src]="movie.poster" [title]="movie.title">
                 </td>
                 <td>
-                    {{ movie.Title }}
+                    {{ movie.title }}
                 </td>
                 <td>
-                    {{ movie.Year }}
+                    {{ movie.year }}
                 </td>
                 <td>
-                    {{ movie.imdbRating }}
+                    <mvdb-star [imdbRating]="movie.imdbRating"></mvdb-star>
                 </td>
             </tr>
         </tbody>

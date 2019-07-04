@@ -5,11 +5,15 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { MoviesListComponent } from './core/movies/movies-list/movies-list.component';
+import { StarComponent } from './core/star/star.component';
+import { SortMoviesPipe } from './core/sort-movies.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MoviesListComponent
+    MoviesListComponent,
+    StarComponent,
+    SortMoviesPipe
   ],
   imports: [
     BrowserModule,
