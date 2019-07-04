@@ -33,7 +33,7 @@ export class MoviesListComponent implements OnInit {
         }
       );
   }
-
+  
   public set listFilter(value: string) {
     this._listFilter = value;
     this.filteredMovies = this.listFilter ? this.performFilter(this.listFilter) : this.movies;

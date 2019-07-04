@@ -1,3 +1,4 @@
+<router-outlet></router-outlet>
 <div class="container">
     <h2>{{ pageTitle }}</h2>
 
@@ -41,7 +42,9 @@
                     <img [src]="movie.poster" [title]="movie.title">
                 </td>
                 <td>
-                    {{ movie.title }}
+                    <a [routerLink]="['/movies', movie.title]">
+                        {{ movie.title }}
+                    </a>
                 </td>
                 <td>
                     {{ movie.year }}
