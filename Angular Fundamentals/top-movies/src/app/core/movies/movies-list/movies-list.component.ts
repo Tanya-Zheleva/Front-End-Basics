@@ -11,11 +11,11 @@ import { MovieService } from '../../movie.service';
 export class MoviesListComponent implements OnInit {
   private _listFilter: string;
   
-  public pageTitle = 'Top 10 iMDB Movies';
+  public pageTitle: string = 'Top 10 iMDB Movies';
   public movies: IMovie[];
   public filteredMovies: IMovie[];
-  public sortOrder = "Asc";
-  public sortType = "Rating";
+  public sortOrder: string = "Asc";
+  public sortType: string = "Rating";
 
   constructor(private movieService: MovieService) {
   }
@@ -24,7 +24,7 @@ export class MoviesListComponent implements OnInit {
     return this._listFilter;
   }
 
-  public ngOnInit() { 
+  public ngOnInit(): void { 
     this.movieService.getMovies()
       .subscribe(
         movies => {
@@ -41,7 +41,9 @@ export class MoviesListComponent implements OnInit {
 
   private performFilter(filterBy: string): IMovie[] {
     filterBy = filterBy.toLocaleLowerCase();
+    let filterdMovie: IMovie[] =this.movies
+      .filter((m: IMovie) => m.title.toLowerCase().indexOf(filterBy) !== -1);
 
-    return this.movies.filter((m: IMovie) => m.title.toLocaleLowerCase().indexOf(filterBy) !== -1);
+    return filterdMovie;
   }
 }

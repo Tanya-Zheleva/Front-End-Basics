@@ -9,6 +9,7 @@ import { MoviesListComponent } from './core/movies/movies-list/movies-list.compo
 import { StarComponent } from './core/star/star.component';
 import { SortMoviesPipe } from './core/sort-movies.pipe';
 import { MoviesDetailComponent } from './core/movies/movies-detail/movies-detail.component';
+import { MoviesShortComponent } from './core/movies/movies-short/movies-short.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { MoviesDetailComponent } from './core/movies/movies-detail/movies-detail
     MoviesListComponent,
     StarComponent,
     SortMoviesPipe,
-    MoviesDetailComponent
+    MoviesDetailComponent,
+    MoviesShortComponent
   ],
   imports: [
     BrowserModule,

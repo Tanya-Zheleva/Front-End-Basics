@@ -9,7 +9,7 @@ import { IMovie } from './movie';
   providedIn: 'root'
 })
 export class MovieService {
-  private moviesUrl = 'api/movies/movies.json';
+  private moviesUrl: string = 'api/movies/movies.json';
 
   constructor(private http: HttpClient) { }
 
@@ -28,7 +28,7 @@ export class MovieService {
   }
 
   private handleError(err: HttpErrorResponse) {
-    let errorMessage = '';
+    let errorMessage: string = '';
 
     if (err.error instanceof ErrorEvent) {
       errorMessage = `An error occurred: ${err.error.message}`;

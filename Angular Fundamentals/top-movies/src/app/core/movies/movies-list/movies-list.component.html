@@ -1,14 +1,14 @@
 <router-outlet></router-outlet>
 <div class="container">
-    <h2>{{ pageTitle }}</h2>
+    <h2 class="page-title">{{ pageTitle }}</h2>
 
     <div class="form-group">
-        <div class="form-group col-md-8">
+        <div class="form-group col-md-10">
             <label for="search">Search</label>
             <input id="search" name="search" class="form-control" type="text" [(ngModel)]="listFilter">
         </div>
 
-        <div class="form-row col-md-8">
+        <div class="form-row col-md-10">
             <div class="form-group col-md-6">
                 <label for="sort">Sort</label>
                 <select name="sort" id="sort" class="form-control" [(ngModel)]="sortType">
@@ -33,25 +33,11 @@
                 <th scope="col">Poster</th>
                 <th scope="col">Title</th>
                 <th scope="col">Year</th>
-                <th scope="col">imdb Rading</th>
+                <th scope="col">IMDb Rading</th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let movie of (filteredMovies | sort: [sortType, sortOrder])">
-                <td>
-                    <img [src]="movie.poster" [title]="movie.title">
-                </td>
-                <td>
-                    <a [routerLink]="['/movies', movie.title]">
-                        {{ movie.title }}
-                    </a>
-                </td>
-                <td>
-                    {{ movie.year }}
-                </td>
-                <td>
-                    <mvdb-star [imdbRating]="movie.imdbRating"></mvdb-star>
-                </td>
+            <tr mvdb-movies-short *ngFor="let movie of (filteredMovies | sort: [sortType, sortOrder])" [movie]="movie">
             </tr>
         </tbody>
     </table>

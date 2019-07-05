@@ -9,11 +9,12 @@ import { MovieService } from '../../movie.service';
   styleUrls: ['./movies-detail.component.css']
 })
 export class MoviesDetailComponent implements OnInit {
-  movie: IMovie;
+  public movie: IMovie;
+
   constructor(private route: ActivatedRoute, private router: Router, private movieService: MovieService) { }
 
   public ngOnInit(): void {
-    let id = this.route.snapshot.paramMap.get('id');
+    let id: string = this.route.snapshot.paramMap.get('id');
     
     this.movieService.getMovie(id)
     .subscribe(

@@ -1,5 +1,12 @@
-img {
-    width: 90px;
-    height: 150px;
-    margin: 5px;
+label {
+    font-weight: 600;
+}
+
+.page-title {
+    text-align: center;
+    margin-top: 25px;
+}
+
+input, select, label {
+    margin-left: 100px;
 }

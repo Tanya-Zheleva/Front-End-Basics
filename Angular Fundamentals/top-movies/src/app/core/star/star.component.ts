@@ -6,12 +6,12 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./star.component.css']
 })
 export class StarComponent implements OnInit {
-  @Input() imdbRating: number;
-  starWidth: number;
+  @Input() public imdbRating: number;
+  public starWidth: number;
 
   constructor() { }
 
-  public ngOnInit() {
+  public ngOnInit(): void {
     this.starWidth = this.imdbRating * 37 / 5;
   }
 }

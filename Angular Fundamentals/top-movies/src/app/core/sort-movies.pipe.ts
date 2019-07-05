@@ -10,8 +10,8 @@ export class SortMoviesPipe implements PipeTransform {
     let sortOrder = criterias[1].toLowerCase();
     
     let sorted = items.sort((a, b) => {  
-      let keyA = Object.keys(a).filter(k => k.indexOf(sortBy) !== -1)[0];
-      let keyB = Object.keys(a).filter(k => k.indexOf(sortBy) !== -1)[0];
+      let keyA = Object.keys(a).find(k => k.indexOf(sortBy) !== -1);
+      let keyB = Object.keys(a).find(k => k.indexOf(sortBy) !== -1);
       
       if (sortOrder === 'desc') {
         return b[keyB].toString().localeCompare(a[keyA].toString());
