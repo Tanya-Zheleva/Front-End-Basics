@@ -9,6 +9,8 @@ import { WeatherComponent } from './weather/weather.component';
 import { AnimalsModule } from '../animals/animals.module';
 import { ClickDirective } from './directives-demo/click.directive';
 import { TooltipDirective } from './directives-demo/tooltip.directive';
+import { FormPageComponent } from './form-page/form-page.component';
+import { FormDemoModule } from '../form/form-demo.module';
 
 @NgModule({
     declarations: [
@@ -19,9 +21,10 @@ import { TooltipDirective } from './directives-demo/tooltip.directive';
         PipesDemoComponent,
         WeatherComponent,
         ClickDirective,
-        TooltipDirective
+        TooltipDirective,
+        FormPageComponent
     ],
-    imports: [ DataManipulationModule, AnimalsModule],
+    imports: [ DataManipulationModule, AnimalsModule, FormDemoModule ],
     exports: []
 })
 export class PagesModule { }

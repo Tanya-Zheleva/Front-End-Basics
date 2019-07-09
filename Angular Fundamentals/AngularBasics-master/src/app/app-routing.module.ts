@@ -7,6 +7,7 @@ import { AnimalsComponent } from "./components/pages/animals/animals.component";
 import { DirectivesDemoComponent } from "./components/pages/directives-demo/directives-demo.component";
 import { PipesDemoComponent } from "./components/pages/pipes-demo/pipes-demo.component";
 import { WeatherComponent } from './components/pages/weather/weather.component';
+import { FormPageComponent } from './components/pages/form-page/form-page.component';
 
 const routes: Routes = [
     {
@@ -37,6 +38,10 @@ const routes: Routes = [
     {
         path: RouterLinksEnum.weather,
         component: WeatherComponent
+    },
+    {
+        path: RouterLinksEnum.form,
+        component: FormPageComponent
     }
 ];
 

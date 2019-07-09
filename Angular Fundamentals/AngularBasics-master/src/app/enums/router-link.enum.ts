@@ -5,4 +5,5 @@ export enum RouterLinksEnum {
     directives = "directives",
     pipes = "pipes",
     weather = "weather",
+    form = "form"
 }
