@@ -1,0 +1,9 @@
+<div class="border p-4">
+    <h1 class="text-center">Displaying Data</h1>
+    <div class="text-center" *ngFor="let person of listOfPeople">
+        <span ng-style="{'color: red': person.name == 'John'}" 
+        *ngIf="person.age > 14" [ngStyle]="{ 'color': getColor(person.job) }">
+            {{ person.name }}
+        </span>
+    </div>
+</div>

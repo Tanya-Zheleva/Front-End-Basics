@@ -1,0 +1,13 @@
+<div class="border p-4">
+    <h1 class="text-center">User Events</h1>
+    <div class="d-flex justify-content-between">
+        <button type="button" class="btn btn-danger pt-4" (click)="onClick()">ALERT!</button>
+        <p class="pt-4">
+            Last pressed key code: {{ lastPressedKey }}
+        </p>
+        <div class="square red pt-4" 
+            (mouseenter)="onMouseHover()"
+            (mouseleave)="onMouseLeave()"
+            [style.background-color]="isRedSquareHovered ? 'green' : 'red'"></div>
+    </div>
+</div>

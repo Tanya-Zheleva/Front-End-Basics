@@ -1,0 +1,20 @@
+<div class="border p-4">
+    <h1 class="text-center">Data Bindings</h1>
+    <div class="row">
+        <div class="col-4">
+            <custom-input [(inputValue)]="firstNumber"></custom-input>
+        </div>
+        <h2>
+            <select name="operator" id="operators" [(ngModel)]="operator">
+                <option>+</option>
+                <option>-</option>
+                <option>*</option>
+                <option>/</option>
+            </select>
+        </h2>
+        <div class="col-4">
+            <custom-input [(inputValue)]="secondNumber"></custom-input>
+        </div>
+        <div class="col-2 h2">= {{ getResult() }}</div>
+    </div>
+</div>
