@@ -1,23 +1,52 @@
-<form>
+<form [formGroup]="form" (submit)="onSubmit()">
   <div class="form-row ">
     <div class="form-group col-md-2">
       <label for="firstName">First name</label>
-      <input id="firstName" formControlName="firstName" class="form-control" type="text">
+      <input id="firstName" formControlName="firstName" class="form-control" type="text"
+        [ngClass]="{ 'is-invalid': submitted && firstName.errors }">
+
+      <div *ngIf="submitted && firstName.errors" class="invalid-feedback">
+        <div *ngIf="firstName.errors.required">First name required</div>
+        <div *ngIf="firstName.errors.minlength">First name must be at least 3 characters long</div>
+      </div>
     </div>
+
     <div class="form-group col-md-2">
       <label for="lastName">Last name</label>
-      <input id="lastName" class="form-control" type="text">
+      <input id="lastName" formControlName="lastName" class="form-control" type="text"
+        [ngClass]="{ 'is-invalid': submitted && lastName.errors }">
+
+      <div *ngIf="submitted && lastName.errors" class="invalid-feedback">
+        <div *ngIf="lastName.errors.required">Last name required</div>
+        <div *ngIf="lastName.errors.minlength">Last name must be at least 3 characters long</div>
+      </div>
     </div>
   </div>
 
   <div class="form-row">
     <div class="form-group col-md-2">
       <label for="email">Email</label>
-      <input id="email" class="form-control" type="text">
+      <input id="email" formControlName="email" class="form-control" type="text"
+        [ngClass]="{ 'is-invalid': submitted && email.errors }">
+
+      <div *ngIf="submitted && email.errors" class="invalid-feedback">
+        <div *ngIf="email.errors.required">Email required</div>
+        <div *ngIf="email.errors.email">Email must be a valid email address</div>
+      </div>
     </div>
     <div class="form-group col-md-2">
-      <label for="city">City</label>
-      <input id="city" class="form-control" type="text">
+      <label for="password">Password</label>
+      <input id="password" formControlName="password" class="form-control" type="password"
+        [ngClass]="{ 'is-invalid': submitted && password.errors }">
+
+      <div *ngIf="submitted && password.errors" class="invalid-feedback">
+        <div *ngIf="password.errors.required">Password required</div>
+        <div *ngIf="password.errors.minlength">Password must be at least 3 characters long</div>
+      </div>
     </div>
+  </div>
+
+  <div class="form-group">
+    <button class="btn btn-primary">Register</button>
   </div>
 </form>
