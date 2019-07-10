@@ -1,4 +1,5 @@
 import { Component, OnInit, OnDestroy, OnChanges, SimpleChanges, AfterViewInit } from "@angular/core";
+import { MathUtilService } from 'src/app/services';
 
 @Component({
     selector: "data-binding",
@@ -14,26 +15,29 @@ export class DataBindingComponent implements OnInit, OnChanges, AfterViewInit, O
     public secondNumber: number = 0;
     public operator: string = '+';
 
+    constructor(private mathServide: MathUtilService) { }
+
     public ngOnInit(): void {
-        console.log('In ngOnInit hook called in main component: ' + this.onInitCalls++);    
+        console.log('In ngOnInit hook called in main component: ' + this.onInitCalls++);
     }
 
     public ngOnChanges(changes: SimpleChanges): void {
-        console.log('In ngOnChanges hook called in main component: ' + this.onChangesCalls++);  
-        let  changeLog: string[] = [];
+        console.log('In ngOnChanges hook called in main component: ' + this.onChangesCalls++);
+        let changeLog: string[] = [];
 
         for (let propName in changes) {
             let chng = changes[propName];
-            let cur  = JSON.stringify(chng.currentValue);
+            let cur = JSON.stringify(chng.currentValue);
             let prev = JSON.stringify(chng.previousValue);
+            
             changeLog.push(`${propName}: currentValue = ${cur}, previousValue = ${prev}`);
-          }
+        }
 
-          console.log('Changes made: ' + changeLog);
+        console.log('Changes made: ' + changeLog);
     }
 
     public ngAfterViewInit(): void {
-        console.log('In ngAfterViewInit hook called in main component: ' + this.afterInitCalls++); ;
+        console.log('In ngAfterViewInit hook called in main component: ' + this.afterInitCalls++);
     }
 
     public ngOnDestroy(): void {
@@ -43,13 +47,13 @@ export class DataBindingComponent implements OnInit, OnChanges, AfterViewInit, O
     public getResult(): number {
         switch (this.operator) {
             case '+':
-                return +this.firstNumber + +this.secondNumber;
+                return this.mathServide.sumOfTwo(+this.firstNumber, +this.secondNumber);
             case '-':
-                return +this.firstNumber - +this.secondNumber;
+                return this.mathServide.differenceOfTwo(+this.firstNumber, +this.secondNumber);
             case '*':
-                return +this.firstNumber + +this.secondNumber;
+                return this.mathServide.productOfTwo(+this.firstNumber, +this.secondNumber);
             case '/':
-                return +this.firstNumber / +this.secondNumber;
+                return this.mathServide.divisionOfTwo(+this.firstNumber, +this.secondNumber);
             default:
                 return 0;
         }

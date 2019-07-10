@@ -11,6 +11,7 @@ import { ClickDirective } from './directives-demo/click.directive';
 import { TooltipDirective } from './directives-demo/tooltip.directive';
 import { FormPageComponent } from './form-page/form-page.component';
 import { FormDemoModule } from '../form/form-demo.module';
+import { KelvinToCelsiusPipe } from './weather/kelvin-to-celsius.pipe';
 
 @NgModule({
     declarations: [
@@ -22,7 +23,8 @@ import { FormDemoModule } from '../form/form-demo.module';
         WeatherComponent,
         ClickDirective,
         TooltipDirective,
-        FormPageComponent
+        FormPageComponent,
+        KelvinToCelsiusPipe,
     ],
     imports: [ DataManipulationModule, AnimalsModule, FormDemoModule ],
     exports: []

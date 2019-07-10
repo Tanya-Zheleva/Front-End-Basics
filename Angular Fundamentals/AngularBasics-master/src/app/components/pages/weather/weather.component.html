@@ -1,11 +1,20 @@
 <div class="p-5">
-    <h3>This is where your weather info should go.</h3>
+    <h3>Select city weather to view</h3>
+    <select class="selectpicker col-md-3" [(ngModel)]="city" (change)="onSelect()"> 
+    <option>Sofia</option>
+        <option>Varna</option>
+        <option>Burgas</option>
+        <option>Pleven</option>
+        <option>Gabrovo</option>
+        <option>Ruse</option>
+    </select>
+
     <div *ngIf="cityWeather">
         <div>name: {{ cityWeather.cityName }}</div>
-        <div>temperature: {{ cityWeather.temperature }}</div>
+        <div>temperature: {{ cityWeather.temperature | kelvinToCelsius }}</div>
         <div>humidity: {{ cityWeather.humidity }}</div>
         <div>weather description: {{ cityWeather.weatherDescription }}</div>
-        <div>sunrise: {{ cityWeather.sunrise }}</div>
-        <div>sunset: {{ cityWeather.sunset }}</div>
+        <div>sunrise: {{ cityWeather.sunrise * 1000 | date:'dd/mm/yyyy hh:mm' }}</div>
+        <div>sunset: {{ cityWeather.sunset * 1000 | date:'dd/mm/yyyy hh:mm' }}</div>
     </div>
 </div>

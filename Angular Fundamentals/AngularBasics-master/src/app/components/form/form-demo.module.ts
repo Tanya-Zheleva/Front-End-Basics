@@ -14,7 +14,8 @@ import { CommonModule } from '@angular/common';
   ],
   exports: [
     FormDemoComponent,
-    CommonModule
+    CommonModule,
+    FormsModule
   ]
 })
 export class FormDemoModule { }

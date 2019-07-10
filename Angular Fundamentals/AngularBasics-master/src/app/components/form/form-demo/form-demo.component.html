@@ -24,7 +24,7 @@
   </div>
 
   <div class="form-row">
-    <div class="form-group col-md-2">
+    <div class="form-group col-md-2">    
       <label for="email">Email</label>
       <input id="email" formControlName="email" class="form-control" type="text"
         [ngClass]="{ 'is-invalid': submitted && email.errors }">
@@ -34,6 +34,8 @@
         <div *ngIf="email.errors.email">Email must be a valid email address</div>
       </div>
     </div>
+
+
     <div class="form-group col-md-2">
       <label for="password">Password</label>
       <input id="password" formControlName="password" class="form-control" type="password"
@@ -46,7 +48,14 @@
     </div>
   </div>
 
+
   <div class="form-group">
     <button class="btn btn-primary">Register</button>
   </div>
 </form>
+
+<ng-template #inputTemplate let-controlName="controlName" let-name="name" let-type="type">
+  <label for="{{controlName}}">{{ name }}</label>
+  <input id="{{controlName}}" class="form-control" type="{{type}}">
+
+</ng-template>
