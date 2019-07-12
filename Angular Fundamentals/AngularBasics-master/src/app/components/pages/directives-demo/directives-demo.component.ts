@@ -4,6 +4,5 @@ import { Component } from "@angular/core";
     templateUrl: "./directives-demo.component.html"
 })
 export class DirectivesDemoComponent {
-    public tooltipText: string = 'Im the tooltip this text deserves';
-    public position: string = 'left';
+    public text: string = 'Im the tooltip this text deserves';
 }

@@ -1,0 +1,14 @@
+<td>
+    <img [src]="movie.Poster" [title]="movie.Title">
+</td>
+<td>
+    <a class="text-dark" [routerLink]="['/movies', movie.imdbID]">
+        {{ movie.Title }}
+    </a>
+    <span *ngIf="movie.Year > 2017" class="badge badge-secondary">
+        New
+    </span>
+</td>
+<td>
+    {{ movie.Year }}
+</td>

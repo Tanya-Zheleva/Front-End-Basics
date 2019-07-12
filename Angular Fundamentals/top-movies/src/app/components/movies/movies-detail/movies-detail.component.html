@@ -1,9 +1,9 @@
 <div class='card card-primary' *ngIf='movie'>
     <div class="card-heading">
         <blockquote class="blockquote text-center" tyle='font-size:large'>
-            <p class="mb-0"> {{ movie.title }}</p>
+            <p class="mb-0"> {{ movie.Title }}</p>
             <footer class="blockquote-footer">
-                A masterpiece by <cite title="Source Title">{{ movie.director }}</cite>
+                A masterpiece by <cite title="Source Title">{{ movie.Director }}</cite>
             </footer>
         </blockquote>
     </div>
@@ -11,61 +11,62 @@
     <div class='card-body'>
         <div class='row'>
             <div class='col-md-2'>
-                <img class='center-block img-responsive' [src]='movie.poster' [title]='movie.title'>
+                <img class='center-block img-responsive' [src]='movie.Poster' [title]='movie.Title'>
             </div>
 
             <div class='col-md-4'>
                 <div class='row'>
                     <div class='col-md-2'>Name:</div>
-                    <div class='col-md-4'>{{ movie.title }}</div>
+                    <div class='col-md-4'>{{ movie.Title }}</div>
                 </div>
                 <div class="row">
                     <div class="col-md-2">Year</div>
-                    <div class='col-md-4'>{{ movie.year }}</div>
+                    <div class='col-md-4'>{{ movie.Year }}</div>
                 </div>
                 <div class="row">
                     <div class="col-md-2">Released</div>
-                    <div class='col-md-4'>{{ movie.released | date}}</div>
+                    <div class='col-md-4'>{{ movie.Released | date}}</div>
                 </div>
                 <div class="row">
                     <div class="col-md-2">Rated</div>
-                    <div class='col-md-4'>{{ movie.rated }}</div>
+                    <div class='col-md-4'>{{ movie.Rated }}</div>
                 </div>
                 <div class="row">
                     <div class="col-md-2">Runtime</div>
-                    <div class='col-md-4'>{{ movie.runtime }}</div>
+                    <div class='col-md-4'>{{ movie.Runtime }}</div>
                 </div>
                 <div class="row">
                     <div class="col-md-2">Genre</div>
-                    <div class='col-md-4'>{{ movie.genre }}</div>
+                    <div class='col-md-4'>{{ movie.Genre }}</div>
                 </div>
 
                 <div class="row">
                     <div class="col-md-2">Writer</div>
-                    <div class='col-md-9'>{{ movie.writer }}</div>
-                </div>
-                <div class="row">
-                    <div class="col-md-2">Actors</div>
-                    <div class='col-md-9'>{{ movie.actors }}</div>
+                    <div class='col-md-9'>{{ movie.Writer }}</div>
                 </div>
             </div>
 
             <div class="col-md-5">
                 <div class="row">
+                    <div class="col-md-2">Actors</div>
+                    <div class='col-md-9'>{{ movie.Actors }}</div>
+                </div>
+                <div class="row">
                     <div class="col-md-2">Country</div>
-                    <div class='col-md-4'>{{ movie.country }}</div>
+                    <div class='col-md-4'>{{ movie.Country }}</div>
                 </div>
                 <div class="row">
                     <div class="col-md-2">Launguage</div>
-                    <div class='col-md-4'>{{ movie.language }}</div>
+                    <div class='col-md-4'>{{ movie.Language }}</div>
                 </div>
                 <div class="row">
                     <div class="col-md-2">Awards</div>
-                    <div class='col-md-8'>{{ movie.awards }}</div>
+                    <div class='col-md-8'>{{ movie.Awards }}</div>
                 </div>
                 <div class="row">
                     <div class="col-md-2">IMDb Rating</div>
-                    <div class='col-md-4'>{{ movie.imdbRating }}
+                    <div class='col-md-4'>
+                        <mvdb-star [imdbRating]="movie.imdbRating"></mvdb-star> 
                     </div>
                 </div>
                 <div class="row">
@@ -74,15 +75,11 @@
                 </div>
                 <div class="row">
                     <div class='col-md-2'>Type</div>
-                    <div class='col-md-4'>{{ movie.type }}</div>
-                </div>
-                <div class="row">
-                    <div class='col-md-2'>Top 250</div>
-                    <div class='col-md-4'>{{ movie.top250 }}</div>
+                    <div class='col-md-4'>{{ movie.Type }}</div>
                 </div>
                 <div class="row">
                     <div class='col-md-2'>Plot</div>
-                    <div class='col-md-9'>{{ movie.plot }}</div>
+                    <div class='col-md-9'>{{ movie.Plot }}</div>
                 </div>
             </div>
         </div>

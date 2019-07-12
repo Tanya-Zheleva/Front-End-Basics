@@ -9,7 +9,7 @@ import { PagesModule } from "./components/pages/pages.module";
     declarations: [AppComponent],
     imports: [
         BrowserModule,
-        AppRoutingModule, 
+        AppRoutingModule,
         PagesModule
     ],
     providers: [],

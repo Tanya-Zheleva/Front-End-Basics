@@ -1,18 +1,17 @@
-<router-outlet></router-outlet>
 <div class="container">
-    <h2 class="page-title">{{ pageTitle }}</h2>
+    <h2 class="text-center">{{ pageTitle }}</h2>
 
     <div class="form-group">
         <div class="form-group col-md-10">
             <label for="search">Search</label>
-            <input id="search" name="search" class="form-control" type="text" [(ngModel)]="listFilter">
+            <input id="search" name="search" class="form-control" type="text" [(ngModel)]="filter" (input)="onSearch()">
         </div>
 
         <div class="form-row col-md-10">
             <div class="form-group col-md-6">
                 <label for="sort">Sort</label>
                 <select name="sort" id="sort" class="form-control" [(ngModel)]="sortType">
-                    <option>Rating</option>
+                    <!-- <option>Rating</option> -->
                     <option>Title</option>
                     <option>Year</option>
                 </select>
@@ -33,12 +32,13 @@
                 <th scope="col">Poster</th>
                 <th scope="col">Title</th>
                 <th scope="col">Year</th>
-                <th scope="col">IMDb Rading</th>
             </tr>
         </thead>
         <tbody>
-            <tr mvdb-movies-short *ngFor="let movie of (filteredMovies | sort: [sortType, sortOrder])" [movie]="movie">
+            <tr mvdb-movies-short *ngFor="let movie of (movies | sort: [sortType, sortOrder])" [movie]="movie">
             </tr>
+            <!-- <tr mvdb-movies-short *ngFor="let movie of (movies | sort: [sortType, sortOrder])" [movie]="movie">
+            </tr> -->
         </tbody>
     </table>
 </div>

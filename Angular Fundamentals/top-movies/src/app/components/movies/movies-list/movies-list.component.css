@@ -2,11 +2,6 @@ label {
     font-weight: 600;
 }
 
-.page-title {
-    text-align: center;
-    margin-top: 25px;
-}
-
 input, select, label {
     margin-left: 100px;
 }
