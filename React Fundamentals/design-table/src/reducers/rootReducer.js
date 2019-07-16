@@ -7,6 +7,7 @@ const initialState = {
     searchText: '',
     searchCol: '',
     gridData: ids,
+    columnConfig: ['Name', 'Age', 'Address'],
     data: {
         '1': {
             key: '1',

@@ -5,14 +5,19 @@ import './App.css';
 import { connect } from 'react-redux';
 import { search } from './actions/search';
 import { reset } from './actions/reset';
-import  getFilteredData from './selectors/getFilteredData';
+import getEntryData from './selectors/getEntryData';
+import getColumnConfig from './selectors/getColumnConfig';
 
 const mapStateToProps = state => {
+  const getEntryDataWrapped = (id) => getEntryData(state, id);
+
   return {
     searchText: state.searchText,
-    data: getFilteredData(state),
+    data: state.data,
+    getEntryData: getEntryDataWrapped,
     searchCol: state.searchCol,
-    gridData: state.gridData
+    gridData: state.gridData,
+    columnConfig: getColumnConfig(state)
   };
 }
 
@@ -83,32 +88,36 @@ class App extends React.Component {
   };
 
   render() {
-    const columns = [
-      {
-        title: 'Name',
-        dataIndex: 'name',
-        key: 'name',
-        width: '20%',
-        ...this.getColumnSearchProps('name'),
-      },
-      {
-        title: 'Age',
-        dataIndex: 'age',
-        key: 'age',
-        width: '20%',
-        ...this.getColumnSearchProps('age'),
-      },
-      {
-        title: 'Address',
-        dataIndex: 'address',
-        key: 'address',
-        width: '20%',
-        ...this.getColumnSearchProps('address'),
-      },
-    ];
+    // const columns = [];
+    // let width = 100 / this.props.columnConfig.length;
+
+    // for (const col of this.props.columnConfig) {
+    //   let lowerCaseCol = col.toLowerCase();
+
+    //   const currentCol = {
+    //     title: col,
+    //     dataIndex: lowerCaseCol,
+    //     key: lowerCaseCol,
+    //     width: `${width}%`,
+    //     ...this.getColumnSearchProps(lowerCaseCol),
+    //   }
+
+    //   columns.push(currentCol);
+    // }
+
+    const { getEntryData, gridData } = this.props;
+
+    let columns = this.props.columnConfig.map(x => {
+      return {
+        ...x,
+        ...this.getColumnSearchProps(x.key)
+      }
+    });
+
+    const dataSource = gridData.map(getEntryData);
 
     return (
-      <Table columns={columns} dataSource={this.props.data} />
+      <Table columns={columns} dataSource={dataSource} />
     );
   }
 }
