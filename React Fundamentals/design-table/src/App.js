@@ -4,16 +4,17 @@ import Highlighter from 'react-highlight-words';
 import './App.css';
 import { connect } from 'react-redux';
 import { search } from './actions/search';
+import { reset } from './actions/reset';
 
 const mapStateToProps = state => {
   return {
-    searchText: state.searchText,
-    allSearches: state.allSearches
+    searchText: state.searchText
   };
 }
 
 const mapDispatchToProps = {
   search,
+  reset
 };
 
 class App extends React.Component {
@@ -88,7 +89,10 @@ class App extends React.Component {
   handleReset = clearFilters => {
     clearFilters();
     // this.setState({ searchText: '' });
-    this.props.search();
+    //this.props.search('');
+    console.log(this.props.reset('reset'));
+    
+    this.props.reset();
   };
 
   render() {

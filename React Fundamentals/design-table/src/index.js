@@ -3,10 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import 'antd/dist/antd.css';
 import App from './App';
-import * as serviceWorker from './serviceWorker';
-import 'bootstrap/dist/css/bootstrap.css';
 import { Provider } from 'react-redux';
-import store from './store';
+import store from './store/store';
 
 const data = [
     {
@@ -33,6 +31,12 @@ const data = [
       age: 32,
       address: 'London No. 2 Lake Park',
     },
+    {
+      key: '5',
+      name: 'Danny Evans',
+      age: 23,
+      address: 'Sofia, Mladost',
+    },
   ];  
 
 ReactDOM.render(
@@ -40,6 +44,3 @@ ReactDOM.render(
         <App data={data}/>
     </Provider>, 
     document.getElementById('root'));
-
-
-serviceWorker.unregister();
