@@ -5,10 +5,14 @@ import './App.css';
 import { connect } from 'react-redux';
 import { search } from './actions/search';
 import { reset } from './actions/reset';
+import  getFilteredData from './selectors/getFilteredData';
 
 const mapStateToProps = state => {
   return {
-    searchText: state.searchText
+    searchText: state.searchText,
+    data: getFilteredData(state),
+    searchCol: state.searchCol,
+    gridData: state.gridData
   };
 }
 
@@ -18,10 +22,6 @@ const mapDispatchToProps = {
 };
 
 class App extends React.Component {
-  // state = {
-  //   searchText: '',
-  // };
-
   getColumnSearchProps = dataIndex => ({
     filterDropdown: ({ setSelectedKeys, selectedKeys, confirm, clearFilters }) => (
       <div style={{ padding: 8 }}>
@@ -37,7 +37,7 @@ class App extends React.Component {
         />
         <Button
           type="primary"
-          onClick={() => this.handleSearch(selectedKeys, confirm)}
+          onClick={() => this.handleSearch(selectedKeys, confirm, dataIndex)}
           icon="search"
           size="small"
           style={{ width: 90, marginRight: 8 }}
@@ -52,11 +52,6 @@ class App extends React.Component {
     filterIcon: filtered => (
       <Icon type="search" style={{ color: filtered ? '#1890ff' : undefined }} />
     ),
-    onFilter: (value, record) =>
-      record[dataIndex]
-        .toString()
-        .toLowerCase()
-        .includes(value.toLowerCase()),
     onFilterDropdownVisibleChange: visible => {
       if (visible) {
         setTimeout(() => this.searchInput.select());
@@ -65,7 +60,6 @@ class App extends React.Component {
     render: text => (
       <Highlighter
         highlightStyle={{ backgroundColor: '#ffc069', padding: 0 }}
-        // searchWords={[this.state.searchText]}
         searchWords={[this.props.searchText]}
         autoEscape
         textToHighlight={text.toString()}
@@ -73,25 +67,18 @@ class App extends React.Component {
     ),
   });
 
-  handleSearch = (selectedKeys, confirm) => {
+  handleSearch = (selectedKeys, confirm, dataIndex) => {
     confirm();
-    console.log('+++++++++++++++++');
-    console.log(this.props.search(selectedKeys));
-    console.log(this.props.search(selectedKeys[0]));
-    this.props.search(selectedKeys[0]);
-    console.log('---------------');
-    console.log(this.props);
-    //console.log(this.state);
+    const payload = {
+      searchText: selectedKeys[0],
+      searchCol: dataIndex
+    };
 
-   // this.setState({ searchText: selectedKeys[0] });
+    this.props.search(payload);
   };
 
   handleReset = clearFilters => {
     clearFilters();
-    // this.setState({ searchText: '' });
-    //this.props.search('');
-    console.log(this.props.reset('reset'));
-    
     this.props.reset();
   };
 
@@ -101,7 +88,7 @@ class App extends React.Component {
         title: 'Name',
         dataIndex: 'name',
         key: 'name',
-        width: '30%',
+        width: '20%',
         ...this.getColumnSearchProps('name'),
       },
       {
@@ -115,11 +102,13 @@ class App extends React.Component {
         title: 'Address',
         dataIndex: 'address',
         key: 'address',
+        width: '20%',
         ...this.getColumnSearchProps('address'),
       },
     ];
+
     return (
-        <Table columns={columns} dataSource={this.props.data} />
+      <Table columns={columns} dataSource={this.props.data} />
     );
   }
 }
