@@ -1,0 +1,211 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rootReducer should handle resset 1`] = `
+Object {
+  "data": Object {
+    "1": Object {
+      "address": "New York No. 1 Lake Park",
+      "age": "32",
+      "key": "1",
+      "name": "John Brown",
+    },
+    "2": Object {
+      "address": "London No. 1 Lake Park",
+      "age": "42",
+      "key": "2",
+      "name": "Joe Black",
+    },
+    "3": Object {
+      "address": "Sidney No. 1 Lake Park",
+      "age": "32",
+      "key": "3",
+      "name": "Jim Green",
+    },
+    "4": Object {
+      "address": "London No. 2 Lake Park",
+      "age": "32",
+      "key": "4",
+      "name": "Jim Red",
+    },
+    "5": Object {
+      "address": "Sofia, Mladost",
+      "age": "23",
+      "key": "5",
+      "name": "Danny Evans",
+    },
+    "6": Object {
+      "address": "Hogwarts",
+      "age": "17",
+      "key": "6",
+      "name": "Harry Potter",
+    },
+    "7": Object {
+      "address": "Gabrovo",
+      "age": "21",
+      "key": "7",
+      "name": "Iva Ivanova",
+    },
+    "8": Object {
+      "address": "Novi Sad",
+      "age": "33",
+      "key": "8",
+      "name": "Iva Georgieva",
+    },
+  },
+  "gridColumns": Array [
+    Object {
+      "dataIndex": "name",
+      "key": "name",
+      "title": "Name",
+      "width": "30%",
+    },
+    Object {
+      "dataIndex": "age",
+      "key": "age",
+      "title": "Age",
+      "width": "30%",
+    },
+    Object {
+      "dataIndex": "address",
+      "key": "address",
+      "title": "Address",
+      "width": "30%",
+    },
+  ],
+  "gridData": Array [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+  ],
+  "pagination": Object {
+    "defaultPageSize": 3,
+    "pageSizeOptions": Array [
+      "3",
+      "6",
+      "9",
+    ],
+    "showSizeChanger": true,
+  },
+  "searchCol": "",
+  "searchText": "",
+}
+`;
+
+exports[`rootReducer should handle search 1`] = `
+Object {
+  "data": Object {
+    "1": Object {
+      "address": "New York No. 1 Lake Park",
+      "age": "32",
+      "key": "1",
+      "name": "John Brown",
+    },
+  },
+  "gridData": Array [
+    "1",
+  ],
+  "searchCol": "name",
+  "searchText": "j",
+}
+`;
+
+exports[`rootReducer should return inital state 1`] = `
+Object {
+  "data": Object {
+    "1": Object {
+      "address": "New York No. 1 Lake Park",
+      "age": "32",
+      "key": "1",
+      "name": "John Brown",
+    },
+    "2": Object {
+      "address": "London No. 1 Lake Park",
+      "age": "42",
+      "key": "2",
+      "name": "Joe Black",
+    },
+    "3": Object {
+      "address": "Sidney No. 1 Lake Park",
+      "age": "32",
+      "key": "3",
+      "name": "Jim Green",
+    },
+    "4": Object {
+      "address": "London No. 2 Lake Park",
+      "age": "32",
+      "key": "4",
+      "name": "Jim Red",
+    },
+    "5": Object {
+      "address": "Sofia, Mladost",
+      "age": "23",
+      "key": "5",
+      "name": "Danny Evans",
+    },
+    "6": Object {
+      "address": "Hogwarts",
+      "age": "17",
+      "key": "6",
+      "name": "Harry Potter",
+    },
+    "7": Object {
+      "address": "Gabrovo",
+      "age": "21",
+      "key": "7",
+      "name": "Iva Ivanova",
+    },
+    "8": Object {
+      "address": "Novi Sad",
+      "age": "33",
+      "key": "8",
+      "name": "Iva Georgieva",
+    },
+  },
+  "gridColumns": Array [
+    Object {
+      "dataIndex": "name",
+      "key": "name",
+      "title": "Name",
+      "width": "30%",
+    },
+    Object {
+      "dataIndex": "age",
+      "key": "age",
+      "title": "Age",
+      "width": "30%",
+    },
+    Object {
+      "dataIndex": "address",
+      "key": "address",
+      "title": "Address",
+      "width": "30%",
+    },
+  ],
+  "gridData": Array [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+  ],
+  "pagination": Object {
+    "defaultPageSize": 3,
+    "pageSizeOptions": Array [
+      "3",
+      "6",
+      "9",
+    ],
+    "showSizeChanger": true,
+  },
+  "searchCol": "",
+  "searchText": "",
+}
+`;
